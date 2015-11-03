@@ -474,7 +474,7 @@ table.categories td{
   /*border: 1px solid black;*/
   position: relative;
   width: 1420px;
-height: 800px;
+height: 500px;
 top: 33px;
 
 }
@@ -508,4 +508,10 @@ top: 33px;
   left: 155px;
   height: 150px;
   width: 600px;
+}
+.address{
+  text-align: right;
+  width:400px;
+  margin-top:50px;
+  margin-left: 10%;
 }
