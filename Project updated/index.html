@@ -7,6 +7,7 @@
   <head>
       <link rel="stylesheet" type="text/css" href ="style.css" >
         <title>TRY&BUY</title>
+        <script src="tryandbuy.js"> </script>
   </head>
   <body>
       <div class="header-top">
@@ -25,13 +26,17 @@
           <img class="logo-image" src="images/indexpage/logo.jpg" alt="images/indexpage/logo.jpg">
       </div>
 
-        <div class="search">
+        <!-- <div class="search"> -->
+        <div id="search">
+
           <form>
               <input id="search-text" type="text" name="firstname" placeholder="Search...">
               <div id="search-holder">
                 <img src="images/indexpage/search-image.png">
                </div>
           </form>
+
+
       </div>
 
       <div class="header-right">
@@ -53,7 +58,10 @@
 
 <div class="body-section">
       <div class="upper-body-section">
-          <img class="banner-image" src="images/indexpage/homepage_header1.jpg" alt="images/indexpage/homepage_header1.jpg"></img>
+          <!-- <img class="banner-image" src="images/indexpage/homepage_header1.jpg" alt="images/indexpage/homepage_header1.jpg"></img> -->
+          <img class="banner-image" id=change src="images/indexpage/homepage_header1.jpg" alt="images/indexpage/homepage_header2.jpg"></img>
+        
+          <!-- <input type=button id=change onclick="changepic();"></input> -->
       </div>
 
       <div class="middle-body-section">
@@ -154,5 +162,8 @@
             Copyright @ 2015, designed by <span class="foot">Try & Buy.com </span>  | <span class="foot">All rights preserved</span>
      </div>
    </div>
+   <noscript> Your Browser does not support JS
+   </noscript>
+
 </body>
 </html>

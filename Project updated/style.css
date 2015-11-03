@@ -148,7 +148,7 @@ a:hover, a:active {
 }
 
 .body-section{
-	height:2000px;
+	height:2050px;
     background-color:white;
     color:black;
 
@@ -172,15 +172,13 @@ a:hover, a:active {
 .frontpage-about-website{
     margin-left:550px;
     background-color: #fff;
-    padding-top:35px;
-    bottom: 0;
-    height: 30px;
-    margin-top: 5em;
+    padding-top:25px;
+    height: 25px;
+    margin-top: 3em;
     position: absolute;
     text-transform: uppercase;
-    top: 580px;
+    top: 610px;
     width: 200px;
-    z-index: 7px;
     display:block;
     font-size:25px;
     text-align: center;
@@ -461,19 +459,6 @@ table.categories td{
     height:400px;
 }
 /*new updated*/
-.sidebtn{
-  font-family: Arial;
-  color: black;
-  font-size: 15px;
-  background: white;
-  border:none;
-  text-decoration: none;
-}
-
-.sidebtn:hover {
-  background: #DC143C;
-  text-decoration: none;
-}
 .footer1{
   border-top:2px solid red;
   margin:15px 0px 0px 15px;
