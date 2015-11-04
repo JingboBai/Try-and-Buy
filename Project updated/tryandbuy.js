@@ -1,3 +1,8 @@
+
+
+
+
+//for changing pic
 var change=setInterval(changePic, 3000);
 var picIndex=0;
 function changePic(){
@@ -16,11 +21,4 @@ function changePic(){
        picIndex+=1;
    }
   myImage.src=arr[picIndex];
-}
-function MyFunction1(){
-  document.getElementById("p1").innerHTML = "this is another text";
-}
-
-function lastModifiedDate(){
-document.write(Date(document.lastModified));
 }
