@@ -277,9 +277,8 @@ img.gift{
     margin-right:1em;
     float:right;
     height:150px;
-    width:250px;
-    border:1px solid red;
-    overflow: hidden;
+    margin-right: 40px;
+
 }
 
 #face-product2{
@@ -287,8 +286,6 @@ img.gift{
     float:right;
     height:150px;
     width:250px;
-    border:1px solid red;
-    overflow: hidden;
 }
 
 #face-product3{
@@ -296,8 +293,7 @@ img.gift{
     float:right;
     height:150px;
     width:250px;
-    border:1px solid red;
-    overflow: hidden;
+
 }
 .body-care-body-section{
     margin-top:40px;
@@ -310,7 +306,7 @@ img.gift{
     float:left;
     height:150px;
     width:250px;
-    border:1px solid red;
+
 }
 
 #body-product2{
@@ -318,7 +314,6 @@ img.gift{
     float:left;
     height:150px;
     width:250px;
-    border:1px solid red;
 }
 
 #body-product3{
@@ -326,7 +321,6 @@ img.gift{
     float:left;
     height:150px;
     width:250px;
-    border:1px solid red;
 }
 .product-education{
     height:350px;
