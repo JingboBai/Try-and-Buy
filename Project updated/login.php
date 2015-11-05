@@ -2,33 +2,9 @@
 <!-- Authors:
     Last Modified by: Prinal
     Last modified on: 10/102015 -->
-<!DOCTYPE html>
-<html>
-  <head>
-      <link rel="stylesheet" type="text/css" href ="style.css" >
-        <title>TRY&BUY</title>
-  </head>
-  <body>
-      <div class="header-top">
-         <div class="header-top-left">
-          !! Find Best Choice For <span class="free" > FREE </span>
-         </div>
-         <div class="header-top-right">
-          News, offers & discounts
-         </div>
-      </div>
-      <div class="login">
-        <a href="./login.html">Log In</a>  |  <a href="./register.html">Register</a>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <a href="./index.html">My Account</a>  |  <a href="./index.html">My Bag</a>
-          <img src="images/indexpage/cart.png">
-
-      </div>
+    <?php
+    <include "index.html">
+  ?>
     <div class="header">
        <div class="logo">
           <img class="logo-image" src="images/indexpage/logo.jpg" alt="images/indexpage/logo.jpg">
