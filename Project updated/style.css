@@ -471,13 +471,15 @@ table.categories td{
     margin:20px;
     width:200px;
     height:200px;
+    position: relative;
 }
-.bath-tall{
-    float:right;
-    margin:20px;
-    width:200px;
-    height:400px;
+.shop{
+  position:absolute;
+  z-index: 1;
+  margin-top: 220px;
+  margin-left: 105px;
 }
+
 /*new updated*/
 .footer1{
   border-top:2px solid red;
