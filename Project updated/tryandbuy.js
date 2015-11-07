@@ -1,15 +1,4 @@
 
-$('#ca-container').contentcarousel();
-
-
-var int = setInterval("$('.ca-nav-next').trigger('click');",1000);
-
-$('.ca-item').hover(function(){
-    clearInterval(int);
-},function(){
-    int = setInterval("$('.ca-nav-next').trigger('click');",1000);
-});
-
 
 
 //for changing pic
@@ -33,8 +22,9 @@ function changePic(){
   myImage.src=arr[picIndex];
 }
 
-$(document).ready(function(){
-    $(".bath").mouseenter(function(){
+ // <!-- this part realized by tinycarousel -->
+$(document).ready(function()
+{
+    $('#slider1').tinycarousel();
 
-    });
 });
