@@ -329,7 +329,7 @@ img.gift{
 }
 .personalized-skincare{
     margin-top: 20px;
-    background-image:url(images/indexpage/discover1.jpg);
+    background-image:url(../images/indexpage/discover1.jpg);
     color: white;
     height:300px;
     width:350px;
@@ -343,7 +343,7 @@ img.gift{
 
 .happy-skincare{
     margin-top: 20px;
-    background-image:url(images/indexpage/routin2.jpg);
+    background-image:url(../images/indexpage/routin2.jpg);
     padding:20px;
     height:300px;
     width:700px;
