@@ -23,6 +23,7 @@ include("../html/header.html");
               <form class=address action="address.php" method="post" >
               <fieldset>
               <legend>Shipping Address</legend>
+              <input type ="checkbox" name="same as billing" value=" Same As Billing"/>
               <span class="error">*</span> indicates required fields <br/>
               <label >Street: </label><input type="text" name="Street" ></br>
               <span class="error">* </span></br>
