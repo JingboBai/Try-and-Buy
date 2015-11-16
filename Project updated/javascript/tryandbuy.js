@@ -21,6 +21,8 @@ function changePic(){
    }
   myImage.src=arr[picIndex];
 }
+//changing pic End
+
 
  // <!-- this part realized by tinycarousel -->
 $(document).ready(function()
@@ -28,3 +30,41 @@ $(document).ready(function()
     $('#slider1').tinycarousel();
 
 });
+//tinycarousel End
+
+//quality buttons
+$(function(){
+	$(".add").click(function(){
+    var t=$(this).parent().find('input[class=text_box]');
+		t.val(parseInt(t.val())+1);
+	})
+	$(".sub").click(function(){
+      var t=$(this).parent().find('input[class=text_box]');
+      if(t.val()>0){
+      t.val(parseInt(t.val())-1);
+    }
+
+	})
+
+})
+//quality End
+
+//enlarge product pic
+var timeoutId;
+$(document).ready(function(){
+$(".smallImg").hover(function(){
+  var self = this;
+  timeoutId=null;
+  timeoutId=setTimeout(function(){
+  $("p#addImage").append('<img id=bigImage src="'+ self.rel + '" alt="" />');
+  $(self).find("img").stop().fadeTo("slow",0.5);}, 2000);
+  }
+
+  ,function(){
+  window.clearTimeout(timeoutId);
+  $(this).find("img").stop().fadeTo("slow",1);
+  $("img#bigImage").remove();
+  });
+});
+
+//enlarge end
