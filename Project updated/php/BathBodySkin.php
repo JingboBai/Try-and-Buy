@@ -30,12 +30,13 @@ include("../html/header.html");
 						</div>
 
 					  <div class=quality>
-				    	  <input class="sub" name="" type="button" value="-" width="48" height="48">
+				    	  <input class="sub" name="" type="button" value="-" >
                 <input class="text_box" name="" type="text" value="0" size="8">
-					      <input class="add" name="" type="button" value="+" width="48" height="48">
+					      <input class="add" name="" type="button" value="+" >
 							  <br>
 						  	<a><img class=trybuy src="../images/try.jpg"></a>
 						  	<a><img class=trybuy src="../images/buy.jpg"></a>
+
 					  </div>
 					</div>
 

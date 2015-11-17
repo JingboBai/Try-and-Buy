@@ -43,10 +43,9 @@ $(function(){
       if(t.val()>0){
       t.val(parseInt(t.val())-1);
     }
+	});
+});
 
-	})
-
-})
 //quality End
 
 //enlarge product pic
