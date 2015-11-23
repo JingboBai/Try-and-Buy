@@ -12,7 +12,6 @@ include("../html/header.html");
             <tr><td><a href="#Moisturiser">Moisturiser </a></td></tr>
           </table>
 
-
       </div>
       <div class="right-section">
 
@@ -43,8 +42,8 @@ include("../html/header.html");
 
 
 					<div class=productDisplay>
-					<a class=smallImg rel="../images/soapBars/soap5.jpg">
-						<img class=productImage src="../images/soapBars/soap5.jpg" alt=" ">
+					<a class=smallImg rel="../images/soapBars/soap2.jpg">
+						<img class=productImage src="../images/soapBars/soap2.jpg" alt=" ">
 					</a>
 					<div class=discription>
 					 <p class=productName>Moringa Soap</p>
@@ -108,8 +107,8 @@ include("../html/header.html");
 
     <h2 class=header2><a name="Hair Care">Hair Care</a></h2>
 					<div class=productDisplay>
-					  <a class=smallImg rel="../images/hair/hair5.jpg">
-					  	<img class=productImage src="../images/hair/hair5.jpg" alt=" ">
+					  <a class=smallImg rel="../images/hair/hair1.jpg">
+					  	<img class=productImage src="../images/hair/hair1.jpg" alt=" ">
 					</a>
 					<div class=discription>
 					 <p class=productName>Moringa Soap</p>
@@ -190,17 +189,11 @@ include("../html/header.html");
 
 
 			</br>
-          <!-- <img class=bath src="../images/hair/hair1.jpg">
-          <img class=bath src="../images/hair/hair2.jpg">
-          <img class=bath src="../images/hair/hair3.jpg">
-          <br>
-          <img  class=bath src="../images/hair/hair4.jpg">
-          <img class=bath src="../images/soapBars/soap8.jpg">
-          <img class=bath src="../images/soapBars/soap6.jpg"> -->
           <h2 class=header2><a name="SPA treatment">SPA treatment</a></h2>
 
 
     </div>
+
 	  </div>
 
 

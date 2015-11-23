@@ -1,6 +1,5 @@
 
 
-
 CREATE TABLE UserInfo
 (
 UserId int UNIQUE,
@@ -8,8 +7,8 @@ FirstName varchar(255),
 LastName varchar(255),
 email varchar(255) NOT NULL ,
 password varchar(255) NOT NULL,
-RewardPoints BOOLEAN,
-Street varchar(255),
+-- RewardPoints BOOLEAN,
+-- Street varchar(255),
 City varchar(255),
 state varchar(255) ,
 zip varchar(255) NOT NULL,
@@ -18,9 +17,9 @@ Flag BOOLEAN,                     -- 1 if both the address are same
 IssueDate date,
 ExpiryDate date,
 VisaCompanyName varchar(255),
-cardNumber int UNIQUE,
+cardNumber int,
 TypeOfCard char,
-PRIMARY_KEY (UserId)
+PRIMARY_KEY (CustomerId)
 );
 
 CREATE TABLE Products
