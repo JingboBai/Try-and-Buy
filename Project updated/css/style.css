@@ -359,13 +359,14 @@ End of index page
 	line-height:2;
 }
 .copy-right{
-	text-align:left;
+	text-align:center;
 	padding-top:150px;
 }
 .foot{
 	color:red;
 }
 .left-section{
+    margin-right: 500px;
     position:fixed;
     top:28%;
     left:2%;

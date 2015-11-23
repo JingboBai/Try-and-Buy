@@ -12,7 +12,16 @@ include("../html/header.html");
 ?>
 
 <div class="search-section">
+  <div class="left-section">
+     <table class=categories>
+      <tr><th>Select a Catagory </th><tr>
+      <tr><td><a href="../php/BathBodySkin.php">BathBody &amp; Skin Care</td></tr>
+      <tr><td><a href="../php//fragrances.php">Fragrances</a></td></tr>
+      <tr><td><a href="../makeup.html">Makeup</td></tr>
+     </table>
+   </div>
 
+  <h2 class=header2 >Search Result</h2>
 <br>
 <br>
 <?php
@@ -36,21 +45,12 @@ include("../html/header.html");
 
         if(mysql_num_rows($row_results) > 0){ // if one or more rows are returned do following
              ?>
-           <div class="left-section">
-              <table class=categories>
-              <tr><th>Select a Catagory </th><tr>
-              <tr><td><a href="../php/BathBodySkin.php">BathBody &amp; Skin Care</td></tr>
-              <tr><td><a href="../php//fragrances.php">Fragrances</a></td></tr>
-              <tr><td><a href="../makeup.html">Makeup</td></tr>
-            </table>
-            </div>
 
             <?php
 
             while($results = mysql_fetch_array($row_results)){
 
             ?>
-
             <div class=productDisplay>
             <p id=addImage></p>
             <a class=smallImg rel="<?=$results['src']?>">
@@ -79,15 +79,22 @@ include("../html/header.html");
 
         }
         else{ // if there is no matching rows do following
-            echo "No results";
+            echo "No results founded.";
         }
 
     }
     else{ // if query length is less than minimum
-        echo "Minimum length of keyword is ".$min_length;
+        echo "Please type your keywords.";
     }
 ?>
 
 </div>
+
+
+<?php
+
+include("../html/index-footer.html");
+
+ ?>
 </body>
 </html>
