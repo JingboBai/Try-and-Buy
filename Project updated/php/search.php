@@ -2,11 +2,8 @@
 
 <?php
 include("../html/header.html");
-?>
 
-<?php
     mysql_connect("localhost", "root", "") or die("Error connecting to database: ".mysql_error());
-
     mysql_select_db("try&buy_db") or die(mysql_error());
 
 ?>
@@ -70,9 +67,6 @@ include("../html/header.html");
                 <img class=trybuy src="../images/buy.jpg">
             </div>
           </div>
-
-
-                <!-- echo "<p><h3>".$results['ProductName']."</h3>".$results['ProductType']."</p>"; -->
 
             <?php
             }

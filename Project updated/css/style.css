@@ -487,7 +487,7 @@ table.categories td{
    border:1px solid #e3e3e3;
    z-index: 2;
    }
-  img.trybuy:hover{
+  .trybuy:hover{
    opacity: 0.6;
   }
   input[type=button]{

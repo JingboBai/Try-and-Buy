@@ -46,8 +46,10 @@ mysql_select_db("try&buy_db") or die(mysql_error());
 										<input class="text_box" name="" type="text" value="0" size="8">
 										<input class="add" name="" type="button" value="+" >
 										<br>
-										<img class=trybuy src="../images/try.jpg">
-										<img class=trybuy src="../images/buy.jpg">
+										<form id="addToBag" action="addToBag.php">
+                    <input class=trybuy type="image" src="../images/try.jpg" alt="Submit">
+                    <input class=trybuy type="image" src="../images/buy.jpg" alt="Submit">
+                    </form>
 								</div>
 							</div>
 
@@ -85,8 +87,10 @@ mysql_select_db("try&buy_db") or die(mysql_error());
 								<input class="text_box" name="" type="text" value="0" size="8">
 								<input class="add" name="" type="button" value="+" >
 								<br>
-								<img class=trybuy src="../images/try.jpg">
-								<img class=trybuy src="../images/buy.jpg">
+								<form id="addToBag" action="addToBag.php">
+								<input class=trybuy type="image" src="../images/try.jpg" alt="Submit">
+								<input class=trybuy type="image" src="../images/buy.jpg" alt="Submit">
+								</form>
 						</div>
 					</div>
 
@@ -121,8 +125,10 @@ mysql_select_db("try&buy_db") or die(mysql_error());
 											<input class="text_box" name="" type="text" value="0" size="8">
 											<input class="add" name="" type="button" value="+" >
 											<br>
-											<img class=trybuy src="../images/try.jpg">
-											<img class=trybuy src="../images/buy.jpg">
+											<form id="addToBag" action="addToBag.php">
+	                    <input class=trybuy type="image" src="../images/try.jpg" alt="Submit">
+	                    <input class=trybuy type="image" src="../images/buy.jpg" alt="Submit">
+	                    </form>
 									</div>
 								</div>
 

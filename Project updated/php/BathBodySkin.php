@@ -2,7 +2,6 @@
 include("../html/header.html");
 
     mysql_connect("localhost", "root", "") or die("Error connecting to database: ".mysql_error());
-
     mysql_select_db("try&buy_db") or die(mysql_error());
 
 ?>
@@ -28,26 +27,26 @@ include("../html/header.html");
 						if(mysql_num_rows($row_results) > 0){ // if one or more rows are returned do following
 
 								while($results = mysql_fetch_array($row_results)){
-
-
 								?>
 								<div class=productDisplay>
 								<p id=addImage></p>
-								<a class=smallImg rel="<?=$results['src']?>">
-									<img class=productImage src="<?=$results['src']?>" alt=" ">
-								</a>
-								<div class=discription>
-								 <p class=productName><?=$results['ProductName']?></p>
-								 <p>$<?=$results['Price']?></p>
-								</div>
-
+                <form id="addToBag" action="addToBag.php" method="post">
+								   <a class=smallImg rel="<?=$results['src']?>">
+								  	<img class=productImage src="<?=$results['src']?>" alt=" ">
+								  </a>
+							 	 <div class=discription>
+								  <p class=productName><?=$results['ProductName']?></p>
+                  <input name="productName" type="hidden" value="<?=$results['ProductName']?>">
+                  <p>$<?=$results['Price']?></p>
+								 </div>
 								<div class=quality>
-										<input class="sub" name="" type="button" value="-" >
-										<input class="text_box" name="" type="text" value="0" size="8">
-										<input class="add" name="" type="button" value="+" >
-										<br>
-										<img class=trybuy src="../images/try.jpg">
-										<img class=trybuy src="../images/buy.jpg">
+                  <input class="sub" name="" type="button" value="-" >
+                  <input class="text_box" name="quantity" type="text" value="0" size="8">
+                  <input class="add" name="" type="button" value="+" >
+                  <br>
+                  <input class=trybuy type="image" src="../images/try.jpg" alt="Submit">
+                  <input class=trybuy type="image" src="../images/buy.jpg" alt="Submit">
+                  </form>
 								</div>
 							</div>
 
@@ -85,8 +84,10 @@ include("../html/header.html");
 								<input class="text_box" name="" type="text" value="0" size="8">
 								<input class="add" name="" type="button" value="+" >
 								<br>
-								<img class=trybuy src="../images/try.jpg">
-								<img class=trybuy src="../images/buy.jpg">
+                <form id="addToBag" action="addToBag.php">
+                <input class=trybuy type="image" src="../images/try.jpg" alt="Submit">
+                <input class=trybuy type="image" src="../images/buy.jpg" alt="Submit">
+                </form>
 						</div>
 					</div>
 
@@ -117,12 +118,14 @@ include("../html/header.html");
 									</div>
 
 									<div class=quality>
+                      <form id="addToBag" action="addToBag.php" method="post">
 											<input class="sub" name="" type="button" value="-" >
-											<input class="text_box" name="" type="text" value="0" size="8">
+											<input class="text_box" name="quantity" type="text" value="0" size="8">
 											<input class="add" name="" type="button" value="+" >
 											<br>
-											<img class=trybuy src="../images/try.jpg">
-											<img class=trybuy src="../images/buy.jpg">
+                      <input class=trybuy type="image" src="../images/try.jpg" alt="Submit">
+                      <input class=trybuy type="image" src="../images/buy.jpg" alt="Submit">
+                      </form>
 									</div>
 								</div>
 
@@ -157,8 +160,10 @@ include("../html/header.html");
 												<input class="text_box" name="" type="text" value="0" size="8">
 												<input class="add" name="" type="button" value="+" >
 												<br>
-												<img class=trybuy src="../images/try.jpg">
-												<img class=trybuy src="../images/buy.jpg">
+                        <form id="addToBag" action="addToBag.php">
+                        <input class=trybuy type="image" src="../images/try.jpg" alt="Submit">
+                        <input class=trybuy type="image" src="../images/buy.jpg" alt="Submit">
+                        </form>
 										</div>
 									</div>
 
