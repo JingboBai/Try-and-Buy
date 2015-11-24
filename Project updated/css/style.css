@@ -736,6 +736,7 @@ top: 33px;
 
 /*search page*/
 .search-section{
+  min-height: 300px;
   padding-left:50px;
   margin: 50px 35% 30px 25%;
   background-color:white;
