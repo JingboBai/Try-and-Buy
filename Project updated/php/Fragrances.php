@@ -1,5 +1,9 @@
 <?php
 include("../html/header.html");
+
+mysql_connect("localhost", "root", "") or die("Error connecting to database: ".mysql_error());
+
+mysql_select_db("try&buy_db") or die(mysql_error());
 ?>
 
 	<div class="body-section">
@@ -15,7 +19,7 @@ include("../html/header.html");
       <div class="right-section">
 
 				<p id=addImage></p>
-				<h2 class=header2 ><a name="Body Cleaners">Body Cleaners</a></h2>
+				<h2 class=header2 ><a name="Deodorant">Deodorant</a></h2>
 
 
 			 <?php
@@ -56,7 +60,7 @@ include("../html/header.html");
 					 </br>
 
 
-		<h2 class=header2><a name="Hair Care">Hair Care</a></h2>
+		<h2 class=header2><a name="Perfume">Perfume</a></h2>
 		<?php
 	$row_results = mysql_query("SELECT * FROM products
 				WHERE `ProductType` ='Perfume' ") or die(mysql_error());
@@ -92,7 +96,7 @@ include("../html/header.html");
 					}
 		?>
 			</br>
-					<h2 class=header2><a name="SPA treatment">SPA treatment</a></h2>
+					<h2 class=header2><a name="Mist">Mist</a></h2>
 					<?php
 				$row_results = mysql_query("SELECT * FROM products
 							WHERE `ProductType` ='Mist' ") or die(mysql_error());

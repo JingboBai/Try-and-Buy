@@ -13,7 +13,7 @@ include("../html/header.html");
             <tr><td><a href="#Body Cleaners">Body Cleaner</a></td></tr>
             <tr><td><a href="#Hair Care">Hair Care </a></td></tr>
             <tr><td><a href="#SPA treatment">Spa Treatment</a></td></tr>
-            <tr><td><a href="#Moisturiser">Moisturiser </a></td></tr>
+            <tr><td><a href="#Moisturizer">moisturizer </a></td></tr>
           </table>
 
       </div>
@@ -132,10 +132,10 @@ include("../html/header.html");
 								}
 					?>
 						</br>
-						<h2 class=header2><a name="Moisturiser">Moisturiser</a></h2>
+						<h2 class=header2><a name="Moisturizer">Moisturizer</a></h2>
 						<?php
 					$row_results = mysql_query("SELECT * FROM products
-								WHERE `ProductType` ='Moisturiser' ") or die(mysql_error());
+								WHERE `ProductType` ='Moisturizer' ") or die(mysql_error());
 								if(mysql_num_rows($row_results) > 0){ // if one or more rows are returned do following
 
 										while($results = mysql_fetch_array($row_results)){
