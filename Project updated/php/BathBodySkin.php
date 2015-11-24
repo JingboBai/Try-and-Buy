@@ -3,7 +3,6 @@ include("../html/header.html");
 
     mysql_connect("localhost", "root", "") or die("Error connecting to database: ".mysql_error());
     mysql_select_db("try&buy_db") or die(mysql_error());
-
 ?>
 	<div class="body-section">
     	  <div class="left-section">
@@ -44,8 +43,8 @@ include("../html/header.html");
                   <input class="text_box" name="quantity" type="text" value="0" size="8">
                   <input class="add" name="" type="button" value="+" >
                   <br>
-                  <input class=trybuy type="image" src="../images/try.jpg" alt="Submit">
-                  <input class=trybuy type="image" src="../images/buy.jpg" alt="Submit">
+                  <input class=trybuy name=submit type="image" src="../images/try.jpg" alt="Submit" value="Try">
+                  <input class=trybuy name=submit type="image" src="../images/buy.jpg" alt="Submit" value="Buy">
                   </form>
 								</div>
 							</div>

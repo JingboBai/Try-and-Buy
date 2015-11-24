@@ -8,6 +8,9 @@ include("../html/header.html");
     mysql_select_db("try&buy_db") or die(mysql_error());
     $quantity= $_POST["quantity"];
     $ProductName= $_POST["productName"];
+    $submitType=$_POST["submit"];
+
+
 
       if($quantity>= 1){
         $_SESSION["quantity"] = "$quantity";
@@ -20,8 +23,9 @@ include("../html/header.html");
 
     <div class="search-section">
     <p> The thing has been added to your cart;</p>
-    <p> Quantity is <?=$_SESSION["quantity"]?> <br>
-        Product name is <?=$_SESSION["ProductName"]?></p>
+    <p> Quantity is <?=$_SESSION["quantity"]?> <br></p>
+    <p> Product name is <?=$_SESSION["ProductName"]?></p>
+    <p> Type is <?php  echo $submitType; ?></p>
     </div>
 
 
