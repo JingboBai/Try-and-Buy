@@ -66,4 +66,16 @@ $(".smallImg").hover(function(){
   });
 });
 
+
+var flag=0;
+$('#show-quick-cart-zone').mouseenter(function () {
+   document.getElementById("show-quick-cart-zone").style.zIndex = "1";
+    $('#quickcart').slideDown(500);
+    return false;
+});
+$('#account-cart-div').mouseleave(function () {
+    $('#quickcart').slideUp(500);
+    return false;
+});
+
 //enlarge end

@@ -78,25 +78,26 @@ CREATE TABLE IF NOT EXISTS `TryCount` (
 -- Table structure for table `UserInfo`
 --
 
-CREATE TABLE IF NOT EXISTS `UserInfo` (
+
+CREATE TABLE `UserInfo` (
   `UserId` int(255) NOT NULL,
-  `FirstName` varchar(255) NOT NULL,
-  `LastName` varchar(255) NOT NULL,
+  `FirstName` varchar(255) DEFAULT NULL,
+  `LastName` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `RewardPoints` int(255) NOT NULL DEFAULT '3',
-  `Street` varchar(255) NOT NULL,
-  `City` varchar(255) NOT NULL,
-  `State` varchar(255) NOT NULL,
-  `Zip` varchar(255) NOT NULL,
-  `Type` int(100) NOT NULL,
-  `Flag` tinyint(1) NOT NULL,
-  `IssueDate` date NOT NULL,
-  `ExpiryDate` date NOT NULL,
-  `VisaCompanyName` varchar(255) NOT NULL,
-  `cardNumber` int(255) NOT NULL,
-  `TypeOfCard` char(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `RewardPoints` int(255) DEFAULT '3',
+  `Street` varchar(255) DEFAULT NULL,
+  `City` varchar(255) DEFAULT NULL,
+  `State` varchar(255) DEFAULT NULL,
+  `Zip` varchar(255) DEFAULT NULL,
+  `Type` int(100) DEFAULT NULL,
+  `Flag` tinyint(1) DEFAULT NULL,
+  `IssueDate` date DEFAULT NULL,
+  `ExpiryDate` date DEFAULT NULL,
+  `VisaCompanyName` varchar(255) DEFAULT NULL,
+  `cardNumber` int(255) DEFAULT NULL,
+  `TypeOfCard` char(255) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `UserInfo`

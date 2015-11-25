@@ -7,6 +7,7 @@
         </script>
         <script type="text/javascript" src="../javascript/jquery.tinycarousel.js"></script>
         <script src="../javascript/tryandbuy.js"> </script>
+        <script src="../javascript/login.js"> </script>
   </head>
   <body>
       <div class="header-top">
@@ -18,15 +19,34 @@
          </div>
       </div>
       <div class="login">
-        <a href="../php/register-login.php">Log In</a>  |  <a href="../php/register-login.php">Register</a>
+        <a href="../php/register-login.php">LogIn Or Register</a>
         <br>
         <br>
         <br>
         <br>
         <br>
-        <br>
-        <a href="../php/index.php">My Account</a>  |  <a href="../php/index.php">My Bag</a>
-          <img src="../images/indexpage/cart.png">
+
+        <div id="account-cart-div">
+        <a id ="myaccount-zone" href="../php/index.php">My Account</a>  |
+        <a id= "show-quick-cart-zone" href="../php/index.php">My Bag</a>  <img src="../images/indexpage/cart.png">
+           <div id="show-quick-cart-deatils">
+                  <div id="quickcart" class="quickcart hide">
+                    <div class="quickcarttitle">
+                      <span>SHOPPING BAG</span>
+                    </div>
+                    <div class="quickcart-products">
+                      <table>
+                        <tr>  <img src="../images/indexpage/cart.png"></tr>
+                        <tr> Product name <tr>
+                        <tr> quantity </tr>
+                        <tr>  <input type="submit"  name="button" value="Delete"></tr>
+                      </table>
+                    </div>
+                    <input type="submit"  name="button" value="checkout">
+                  </div>
+                </div>
+              </div>
+        </div>
 
       </div>
     <div class="header">
