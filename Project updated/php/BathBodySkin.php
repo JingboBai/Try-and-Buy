@@ -1,6 +1,5 @@
 <?php
 include("../html/header.html");
-
     mysql_connect("localhost", "root", "") or die("Error connecting to database: ".mysql_error());
     mysql_select_db("try&buy_db") or die(mysql_error());
 ?>
@@ -35,7 +34,7 @@ include("../html/header.html");
 								  </a>
 							 	 <div class=discription>
 								  <p class=productName><?=$results['ProductName']?></p>
-                  <input name="productName" type="hidden" value="<?=$results['ProductName']?>">
+                  <input name="ProductId" type="hidden" value="<?=$results['ProductId']?>">
                   <p>$<?=$results['Price']?></p>
 								 </div>
 								<div class=quality>

@@ -41,9 +41,7 @@ include("../html/header.html");
 
 
         if(mysql_num_rows($row_results) > 0){ // if one or more rows are returned do following
-             ?>
-
-            <?php
+        
 
             while($results = mysql_fetch_array($row_results)){
 
