@@ -3,7 +3,7 @@
 <?php
 include("../html/header.html");
 
-    mysql_connect("localhost", "root", "") or die("Error connecting to database: ".mysql_error());
+    mysql_connect("localhost:8888", "root", "root") or die("Error connecting to database: ".mysql_error());
     mysql_select_db("try&buy_db") or die(mysql_error());
 
 ?>
@@ -41,7 +41,7 @@ include("../html/header.html");
 
 
         if(mysql_num_rows($row_results) > 0){ // if one or more rows are returned do following
-        
+
 
             while($results = mysql_fetch_array($row_results)){
 
