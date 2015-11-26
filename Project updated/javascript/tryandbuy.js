@@ -1,29 +1,5 @@
 
 
-
-//for changing pic
-var change=setInterval(changePic, 3000);
-var picIndex=0;
-function changePic(){
-
-  var myImage=document.getElementById("change");
-  var arr=new Array();
-  arr[0]="../images/indexpage/homepage_header1.jpg";
-  arr[1]="../images/indexpage/homepage_header2.jpg";
-  arr[2]="../images/indexpage/homepage_header3.jpg";
-  if (picIndex==arr.length-1)
-   {
-       picIndex=0;
-   }
-   else
-   {
-       picIndex+=1;
-   }
-  myImage.src=arr[picIndex];
-}
-//changing pic End
-
-
  // <!-- this part realized by tinycarousel -->
 $(document).ready(function()
 {
@@ -36,15 +12,34 @@ $(document).ready(function()
 $(function(){
 	$(".add").click(function(){
     var t=$(this).parent().find('input[class=text_box]');
-		t.val(parseInt(t.val())+1);
+		t.val(parseFloat(t.val())+1);
+    setTotal();
 	})
 	$(".sub").click(function(){
       var t=$(this).parent().find('input[class=text_box]');
       if(t.val()>0){
-      t.val(parseInt(t.val())-1);
+      t.val(parseFloat(t.val())-1);
     }
+    setTotal();
 	});
 });
+function setTotal(){
+var total=0;
+var s=0;
+var myArray;
+$("#tab td").each(function(){
+s=parseInt($(this).find('input[class=text_box]').val())*parseFloat($(this).find('span[class=price]').html());
+$(this).find(".total").html(s.toFixed(2));
+// var s = s.toFixed(2).replace(/[^0-9]/ig,"");
+total+=$(this).find(".total").text()*1;
+});
+// myArray = $('.total');
+// // alert(myArray)
+// $('.total').each(function() {
+//     total += myArray.html();
+// });
+    $(".allTotal").html(total);
+  }
 
 //quality End
 
@@ -79,3 +74,12 @@ $('#account-cart-div').mouseleave(function () {
 });
 
 //enlarge end
+
+
+
+// shopping cart
+$(function() {
+    $('.chk_boxes').click(function() {
+        $('.check').prop('checked', this.checked);
+    });
+});

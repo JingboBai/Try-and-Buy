@@ -1,16 +1,30 @@
 <?php
 include("../html/header.html");
+include "dbconnect.php";
 ?>
 
 <?php
     session_start();
-    $connect=mysql_connect("localhost:8888", "root", "root") or die("Error connecting to database: ".mysql_error());
-    mysql_select_db("try&buy_db") or die(mysql_error());
 
     $quantity= $_POST["quantity"];
     $submitType= $_POST["submit"];
     $ProductId= $_POST["ProductId"];
+    $total=0;
 
+
+
+    if(!empty($_POST['check_list'])) {
+        foreach($_POST['check_list'] as $check) {
+
+               echo $check;
+                if(($_POST['delete']==1))
+                {
+                  mysql_query("UPDATE Products
+                  SET Quantity='NULL'
+                  WHERE ProductName='$check'")or die(mysql_error());
+                }
+        }
+    }
 
       // if($quantity>= 1){
         // $_SESSION["quantity"] = "$quantity";
@@ -30,6 +44,8 @@ include("../html/header.html");
 ?>
 
     <div class="search-section">
+      <h2 class=header2 >My Bag</h2>
+          <form  action="addToBag.php" method="post">
       <?php
       if(mysql_num_rows($row_results) > 0) {
                                 while($row = mysql_fetch_array($row_results)){
@@ -45,19 +61,49 @@ include("../html/header.html");
 
     foreach($titles as $index => $title){
 
-    echo
-    '<h2>'.$title.'</h2>
-     <p> Price: '.$price[$index].'</p>
-     <p> Quantity: '.$count[$index].'</p>
-     <p> Total: '.($price[$index] * $count[$index]).'</p>
+     ?>
+     <table id="tab">
+        <tr>
+        <td><input class="check" type="checkbox" name='check_list[]' value="<?=$title?>"> </td>
+        <td> <img class=productImage src="<?=$src[$index]?>" alt=" "></td>
+        <td>
+      <div class=discription>
+        <p class=productName><?=$title?></p>
+        <p>$<span class="price"><?=$price[$index]?></span></p>
+      </div>
+     <div class=quality>
+         <p> Quantity: </p>
+         <input class="sub" name="" type="button" value="-" >
+         <input class="text_box" name="" type="text" value="<?=$count[$index]?>" size="8">
+         <input class="add" name="" type="button" value="+" >
+         <p> Price：$ <span class="total"> <?=($price[$index] * $count[$index])?></span></p>
+         <br>
+     </div>
+   </td>
+    <td>
 
-     <p>'.$src[$index].'</p>' ;
-
-    }
-
+    </td>
+    </table>
+   <?php
+      $total+=($price[$index] * $count[$index]);
     }
      ?>
+        <p>Total : $<span class=allTotal> <?=$total?></span></p>
+        <input type="checkbox" class="chk_boxes" label="check all" />
+        Select All
+        <button onclick="submit" name="delete" value="1">Delete</button>
+        <button onclick="submit" name="checkout">Checkout</button>
+     <?php
+    }
+     ?>
+
+
+       </form>
+       <?php
+
+       ?>
     </div>
+
 
 
 <?php
