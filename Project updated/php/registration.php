@@ -5,15 +5,18 @@ if (isset($_POST['Regemail']) && isset($_POST['Regpassword'])){
          $email = $_POST['Regemail'];
          $password = $_POST['Regpassword'];
          $newURL ="index.php";
-         $result = mysqli_query($conn, "INSERT INTO UserInfo (FirstName, email, password) VALUES ('$username', '$email', '$password')");
+         $result =null;
+         $result = mysql_query("INSERT INTO UserInfo (FirstName, email, password) VALUES ('$username', '$email', '$password')")
+         or die(mysql_error());
+
          if($result){
         //   echo "updated successfully";
            header("Location: ./index.php");
            exit;
          }
          else{
-           echo "failed updating";
+           echo "failed updating.$username,$email,$password";
         }
      }
-     mysqli_close($conn);
+     mysql_close($conn);
 ?>
