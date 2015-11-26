@@ -23,7 +23,7 @@ include("../html/header.html");
 
         $row_results = mysql_query("SELECT *
                                            FROM Products p
-                                           WHERE Quantity IS NOT NULL") or die(mysql_error());
+                                           WHERE Quantity >'1'") or die(mysql_error());
 
 
 
@@ -49,7 +49,7 @@ include("../html/header.html");
     '<h2>'.$title.'</h2>
      <p> Price: '.$price[$index].'</p>
      <p> Quantity: '.$count[$index].'</p>
-     <p> Total: '.($price[$index] * $quantity).'</p>
+     <p> Total: '.($price[$index] * $count[$index]).'</p>
 
      <p>'.$src[$index].'</p>' ;
 
