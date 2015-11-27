@@ -1,63 +1,18 @@
 /*
 start of index page
 */
-#forget-div{
-  background-color: red;
-  margin-top:200px;
-  margin-left: 300px;
-}
-.quickcart{
-  width:200px;
-  height:100px;
-  z-index:50000;
-  border:1px solid #bebebe;
-  padding:8px 10px 10px;
-  text-align:left;
-  color:black;
-  text-align:center;
-}
 
-#account-cart-div{
-float:right;
-width:200px;
-margin-right:20px;
-}
-#myaccount-zone{
-width:100px;
-}
-#show-quick-cart-zone{
-width:75px;
-
-}
-.hide{
-  display:none;
-}
-.quickcarttitle{
-  text-align:center;
-  padding-top:15px;
-  font-size:20px;
-}
-#show-quick-cart-details{
-  border:1px solid black;
-  z-index: 1;
-  position: relative;
-  width:300px;
-  height: 500px;
-}
  body{
         width:100%;
         height:100%;
  }
-
 .login{
-        width: 200px;
-        height: 30px;
-        float:right;
-        padding-right: 1em;
-        padding-top: 1em;
-        display:inline;
-        clear:both;
-        text-align: right;
+      margin-left: 950px;
+      position:absolute;
+      top:60px;
+}
+#register{
+  font-size:12px;
 }
 .login img{
     height:25px;
@@ -70,7 +25,6 @@ width:75px;
         color:white;
         background-color:black;
         height:40px;
-
 }
 .header-top-left{
         text-indent:50px;
@@ -87,19 +41,17 @@ width:75px;
         text-indent: 20px;
         margin-top:15px;
 }
-
 .header{
-        border-bottom:2px solid red;
+    border-bottom:2px solid brown;
 		height:170px;
 		background-color:white;
 		color:black;
 		margin-top:20px;
-		/*width:1000px ;*/
+    width:800px;
 }
-
 .logo{
         float:left;
-        width: 430px;
+        width: 250px;
         height: 150px;
         padding-left:20px;
         padding-bottom:5px;
@@ -110,8 +62,8 @@ width:75px;
         height:150px;
         width:150px;
 }
-.search{
-    padding-left:430px;
+#search{
+    padding-left:390px;
     width:500px;
     height:100px;
 }
@@ -131,7 +83,6 @@ width:75px;
     padding:.5em 0 .4em 3em;
     width:300px;
 }
-
 #search-holder{
     position:absolute;
     left:740px;
@@ -147,13 +98,50 @@ width:75px;
     width:40px;
     margin-top: 1.7em;
 }
-
 #search-img{
   margin:5px;
   width:30px;
   height:20px;
 }
+/* about cart  hover*/
 
+#account-cart-div {
+    float: right;
+    margin-left: 1050px;
+    position: absolute;
+    top: 150px;
+    height:40px;
+    width: 200px;
+}
+
+
+/*#account-cart-zone{
+float:right;
+width:50px;
+margin-right:20px;
+}
+#my-account-zone{
+width:100px;
+}
+#show-quick-cart-zone{
+width:50px;
+}
+.hide{
+  display:none;
+}*/
+/*.quickcarttitle{
+  text-align:center;
+  padding-top:15px;
+  font-size:20px;
+}
+#show-quick-cart-details{
+  border:1px solid black;
+  z-index: 1;
+  position: relative;
+  width:300px;
+  height: 500px;
+}*/
+/* cart hover ends */
 
 .header-right{
         width:200px;
@@ -162,20 +150,19 @@ width:75px;
         padding-top:85px;
 }
 
-.nav{
-        margin-left:150px;
-        background-color: #fff;
-        border: 1px solid white;
-        bottom: 0;
-        height: 40px;
-        margin-top: 5em;
-        position: absolute;
-        text-transform: uppercase;
-        top: 150px;
-        width: 900px;
-        padding-left: 30px;
-        display:block;
-
+.nav {
+    background-color: #fff;
+    border: 5px groove brown;
+    display: block;
+    height: 30px;
+    margin-left: 182px;
+    margin-top: 4em;
+    padding-left: 20px;
+    padding-top: 7px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 150px;
+    width: 872px;
 }
 .nav ul {
         list-style-type: none;
@@ -217,27 +204,24 @@ a:link, a:visited {
     padding-bottom:5px;
     width:100%;
 }
-.middle-body-section{
+/*.middle-body-section{
     margin-top:35px;
     min-width: 600px;
     min-height:300px;
-    border-top:2px solid red;
+    border-top:2px solid brown;
     overflow:scroll;
-}
-
-.frontpage-about-website{
-    margin-left:550px;
-    background-color: #fff;
-    padding-top:25px;
-    height: 25px;
-    margin-top: 3em;
-    position: absolute;
-    text-transform: uppercase;
-    top: 610px;
-    width: 200px;
-    display:block;
-    font-size:25px;
+}*/
+.middle-body-section{
+    width:1100px;
+    height:400px;
+    padding: 50px;
+    margin:50px;
+    border: 5px solid brown;
     text-align: center;
+}
+.frontpage-about-website{
+    text-transform: uppercase;
+    font-size:35px;
 }
 
 .front-text{
@@ -247,50 +231,44 @@ a:link, a:visited {
 }
 
 #services{
-     height:250px;
+     height:200px;
 }
 .gift{
   align-content: center;
   padding-right: 30px;
   padding-left: 30px;
-  width:80px;
-  height:80px;
+  width:60px;
+  height:60px;
   z-index: -1;
 }
 #gift
 {
   margin-left: 30%;
   margin-right: 30%;
-  border-collapse: collapse;
+  border-collapse: 1px solid red;
   text-align: center;
 }
 table#gift td{
   padding:50px;
   padding-right: 60px;
-  border-collapse: collapse;
+  border: 15px groove brown;
 }
 table#gift td.right{
 border:none;
 padding-left:80px;
 }
 img.gift{
-  width:65px;
-  height:65px;
+  width:80px;
+  height:40px;
 }
-
 .facial-care-body-section {
-    border:1px solid black;
+    border:1px solid brown;
     height:350px;
 }
 
-.body-image{
-    position:absolute;
-    height:350px;
-    width:400px;
-    padding:70px;
-}
 .best-seller-text{
     text-align: center;
+    font-size:25px;
 }
 
 .best-seller-products1{
@@ -301,8 +279,6 @@ img.gift{
     padding-right: 30px;
     left:400px;
 }
-
-
 .personalized-skincare{
     margin-top: 20px;
     background-image:url(../images/indexpage/discover1.jpg);
@@ -316,7 +292,6 @@ img.gift{
     font-size:30px;
     padding:20px;
 }
-
 .happy-skincare{
     margin-top: 20px;
     background-image:url(../images/indexpage/routin2.jpg);
@@ -329,14 +304,11 @@ img.gift{
     text-align:right;
     font-size:20px;
 }
-
-
 .body-care-body-section{
     margin-top:40px;
     border:1px solid black;
     height:350px;
 }
-
 <<<<<<< HEAD:Project updated/css/style.css
 /*
 End of index page
@@ -356,7 +328,6 @@ End of index page
     font-size:30px;
     padding:20px;
 }
-
 .happy-skincare{
     margin-top: 20px;
     background-image:url(../images/indexpage/routin2.jpg);
@@ -381,8 +352,6 @@ End of index page
   margin:15px 0px 0px 15px;
   height:50px;
 }
-
-
 .table{
 	width:1000px;
 	height:50px;
@@ -545,6 +514,7 @@ table.categories td{
   background: #b9bfc7;
   text-decoration: none;
   }
+
 /*
 sub pages body section ends
 */
@@ -728,25 +698,25 @@ top: 33px;
 
 /*tiny caroural*/
 #slider1 {
-  position: absolute;
-  left:450px;
-  height: 200px;
-  width:800px;
-  overflow: hidden;
-  padding: 0 0 10px;
+  /*position: absolute;*/
+  left:40px;
+  height: 300px;
+  /*width:400px;*/
+  padding: 0 0 10px 20px;
   margin-top: 50px;
 }
 #slider1 .viewport {
   float: left;
-  width: 680px;
-  height: 125px;
+  width: 800px;
+  height: 200px;
   overflow: hidden;
-  position:relative; }
+  position:relative;
+}
 #slider1 .buttons {
     background: #C01313;
     border-radius: 35px;
     display: block;
-    margin: 30px 10px 0 0;
+    margin: 50px 10px 0 0;
     float: left;
     width: 35px;
     height: 35px;
@@ -760,7 +730,7 @@ top: 33px;
     font-size: 22px;
 }
 #slider1 .next {
-    margin: 30px 0 0 10px;
+    margin: 50px 0 0 300px;
 }
 #slider1 .buttons:hover {
     color: #C01313;
@@ -779,9 +749,9 @@ top: 33px;
     top: 0; }
 #slider1 .overview li {
   float: left;
-  margin: 0 20px 0 0;
-  padding: 1px;
-  height: 121px;
+  margin: 0 40px 0 0;
+  padding: 1em;
+  height: 150px;
   border: 1px
   solid #dcdcdc;
   width: 150px;

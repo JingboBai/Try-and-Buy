@@ -1,6 +1,9 @@
 <?php
 include("../html/header.html");
+include("../php/login-account-cart.php");
+include("../html/nav.html");
 ?>
+
 <div class="login-section">
   <div class="fbLogin">
 <span id="login-top"> Discovering beauty is even more exciting with friends!!    </span>
@@ -10,8 +13,29 @@ include("../html/header.html");
     <div id="userlogin">
       <p class="login-heading"> Customer Login </p>
      <form method="post" action="login.php" name="login-form" onsubmit="return validateLoginForm()">
-       <span class="error" id= "emailErr"></span><br>
-       <span class="error" id= "passErr"></span><br>
+       <span class="error" id= "emailErr"></span>
+       <span class="error" id= "passErr"></span>
+
+<?php
+if (isset($_SESSION["flash"])){
+  ?>
+  <div class="error"> <?= $_SESSION["flash"] ?> </div>
+  <?php
+  unset($_SESSION["flash"]);
+}
+ ?>
+ <?php
+ if (isset($_SESSION["username"])){
+   ?>
+   <div class="error"> Your Email is: <?= $_SESSION["username"] ?>  </div>
+   <div class="error"> Your Password is: <?= $_SESSION["passwo"] ?>  </div>
+
+   <?php
+   unset($_SESSION["username"]);
+   unset($_SESSION["passwo"]);
+
+ }
+  ?>
       <input class="text" type="text" placeholder="Email Address" name="email" >
         <br>
         <input class="text" type="text" placeholder="Password" name="password">
@@ -30,8 +54,8 @@ include("../html/header.html");
     <div id="userlogin">
       <p> Create Account </p>
         <form method= "post" action="./registration.php" name="Reg-Form" onsubmit="return validateRegForm()">
-        <span class="error" id= "RegpassErr"></span><br>
-        <span class="error" id= "RegemailErr"></span><br>
+        <span class="error" id= "RegpassErr"></span>
+        <span class="error" id= "RegemailErr"></span>
         <input class="text" type="text" placeholder="User Name" name="username">
         <br>
         <input class="text" type="text" placeholder="Email Address" name="Regemail">
@@ -73,7 +97,7 @@ include("../html/header.html");
 </div>
 
 <?php
-include("../html/index-footer.html")
+include("../html/index-footer.html");
 ?>
 
   </body>

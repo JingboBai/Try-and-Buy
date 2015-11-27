@@ -1,5 +1,6 @@
 <?php
 include "dbconnect.php";
+session_start();
 if (isset($_POST['Regemail']) && isset($_POST['Regpassword'])){
          $username = $_POST['username'];
          $email = $_POST['Regemail'];
@@ -9,11 +10,13 @@ if (isset($_POST['Regemail']) && isset($_POST['Regpassword'])){
          or die(mysql_error());
 
          if($result){
-        //   echo "updated successfully";
+           $name= "SELECT FirstName FROM UserInfo WHERE email='$username';";
+           $_SESSION["name"]= $name;
            header("Location: ./index.php");
            exit;
          }
          else{
+           header("Location: ./register-login.php");
            echo "failed updating.$username,$email,$password";
         }
      }
