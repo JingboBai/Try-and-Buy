@@ -61,18 +61,15 @@ $(".smallImg").hover(function(){
   });
 });
 
-
-var flag=0;
-$('#show-quick-cart-zone').mouseenter(function () {
-   document.getElementById("show-quick-cart-zone").style.zIndex = "1";
-    $('#quickcart').slideDown(500);
-    return false;
+//for hover on MyBag
+$(document).ready(function(){
+  $('#show-quick-cart-zone').mouseenter(function () {
+      $('#show-quick-cart-details').slideDown(500);
+  });
+  $('#show-quick-cart-zone').mouseleave(function () {
+      $('#show-quick-cart-details').slideUp(500);
+  });
 });
-$('#account-cart-div').mouseleave(function () {
-    $('#quickcart').slideUp(500);
-    return false;
-});
-
 //enlarge end
 
 

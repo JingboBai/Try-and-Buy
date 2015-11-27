@@ -1,65 +1,23 @@
 <?php
 include("../html/header.html");
-// //connect to database
-// mysql_connect("127.0.0.1", "root", "root") or die("Error connecting to database: ".mysql_error());
-// // Connect to my database
-// mysql_select_db("try&buy_db") or die(mysql_error());
-//
-
-// define variables and set to empty values
-$passErr = $emailErr = $RegpassErr =$RegemailErr = "";
-$pass = $email = "";
-//
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//    if (empty($_POST["email"])) {
-//      $emailErr = "Email is required";
-//    } else {
-//      $email = test_input($_POST["email"]);
-//      // check if e-mail address is well-formed
-//      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-//        $emailErr = "Invalid email format";
-//      }
-//    }
-//    if (empty($_POST["Regemail"])) {
-//      $RegemailErr = "Email is required";
-//    } else {
-//      $email = test_input($_POST["Regemail"]);
-//      // check if e-mail address is well-formed
-//      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-//        $RegemailErr = "Invalid email format";
-//      }
-//    }
-//    if (empty($_POST["password"])) {
-//      $passErr = "Password is required";
-//    }
-//    if (empty($_POST["Regpassword"])) {
-//      $RegpassErr = "Password is required";
-//    }
-//  }
-//    function test_input($data) {
-//    $data = trim($data);
-//    $data = stripslashes($data);
-//    $data = htmlspecialchars($data);
-//    return $data;
-//  }
-
 ?>
 <div class="login-section">
-  <!-- <div class="fbLogin">
+  <div class="fbLogin">
 <span id="login-top"> Discovering beauty is even more exciting with friends!!    </span>
 <input type="image" id="connect-fb" src="../images/login-register/fb-connect.jpg" />
-  </div> -->
+  </div>
   <div class="login-body">
     <div id="userlogin">
       <p class="login-heading"> Customer Login </p>
-     <form method="post" action="login.php">
-      <span class="error"><?php echo $passErr;?></span><br>
-      <span class="error"> <?php echo $emailErr;?></span>
-        <input class="text" type="text" placeholder="Email Address" name="email" >
+     <form method="post" action="login.php" name="login-form" onsubmit="return validateLoginForm()">
+       <span class="error" id= "emailErr"></span><br>
+       <span class="error" id= "passErr"></span><br>
+      <input class="text" type="text" placeholder="Email Address" name="email" >
         <br>
         <input class="text" type="text" placeholder="Password" name="password">
         <br>
-        <p> <a href="forgetPassword.php" class="login-password">Forgot Password? </a></p>
+        <p> <a href="forgetPassword.php" class="login-password">Forgot Password? </a>
+        </p>
         <br>
         <input id="login-button" type="submit" value="Log In">
         <p> <a href="index.php" class="returnLink">or  Return to store</a> <p>
@@ -71,9 +29,9 @@ $pass = $email = "";
   <div class="register-section">
     <div id="userlogin">
       <p> Create Account </p>
-        <form method= "post" action="./registration.php">
-        <span class="error"> <?php echo $RegpassErr;?></span><br>
-        <span class="error"><?php echo $RegemailErr;?></span>
+        <form method= "post" action="./registration.php" name="Reg-Form" onsubmit="return validateRegForm()">
+        <span class="error" id= "RegpassErr"></span><br>
+        <span class="error" id= "RegemailErr"></span><br>
         <input class="text" type="text" placeholder="User Name" name="username">
         <br>
         <input class="text" type="text" placeholder="Email Address" name="Regemail">

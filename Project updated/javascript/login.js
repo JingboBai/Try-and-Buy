@@ -44,24 +44,41 @@
 //
 
 
+function validateLoginForm() {
+    var email = document.forms["login-form"]["email"].value;
+    var password = document.forms["login-form"]["password"].value;
+    if (email == null || email == "") {
+      document.getElementById("emailErr").innerHTML = "* Email is required";
+        return false;
+    }else{
+          var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+          if(!(re.test(email))){
+            document.getElementById("emailErr").innerHTML = "* Incorrect Email format";
+            return false;
+          }
+    }
+    if (password == null || password == "") {
+      document.getElementById("passErr").innerHTML = "* Password is required";
+        return false;
+    }
 
-$(document).ready(
-  function(){
-    //registering an event handler on click
-    $("#login-button").on("click",
-      function() {
-        var email;
-        var password;
-        var option;
-        if($('input[type="radio"]:checked').length){
-          option = $('input[type="radio"]:checked').val();
-        }
-        else if($(".text").length){
-          option =  $("#textAnswer").val();
-        }
-        else if(option == undefined){
-          alert ("");
-        }
-        submitAnswerAndFetchQuestion(option,timer);
-      }
-    );
+}
+
+function validateRegForm() {
+    var email = document.forms["Reg-Form"]["Regemail"].value;
+      var password = document.forms["Reg-Form"]["Regpassword"].value;
+    if (email == null || email == "") {
+      document.getElementById("RegemailErr").innerHTML = "* Email is required";
+        return false;
+    }else{
+          var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+          if(!(re.test(email))){
+            document.getElementById("RegemailErr").innerHTML = "* Incorrect Email format";
+            return false;
+          }
+    }
+    if (password == null || password == "") {
+      document.getElementById("RegpassErr").innerHTML = "* Password is required";
+        return false;
+    }
+}
