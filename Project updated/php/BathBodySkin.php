@@ -27,7 +27,7 @@ include "dbconnect.php";
 								?>
 								<div class=productDisplay>
 								<p id=addImage></p>
-                <form id="addToBag" action="addToBag.php" method="post">
+                <form name="tryandbuy" id="addToBag" action="addToBag.php" method="post" >
 								   <a class=smallImg rel="<?=$results['src']?>">
 								  	<img class=productImage src="<?=$results['src']?>" alt=" ">
 								  </a>
@@ -41,7 +41,7 @@ include "dbconnect.php";
                   <input class="text_box" name="quantity" type="text" value="0" size="8">
                   <input class="add" name="" type="button" value="+" >
                   <br>
-                  <input class=trybuy name=submit type="image" src="../images/try.jpg" alt="Submit" value="Try">
+                  <input class=trybuy name=submit type="image" src="../images/try.jpg" alt="Submit" value="Try" >
                   <input class=trybuy name=submit type="image" src="../images/buy.jpg" alt="Submit" value="Buy">
                   </form>
 								</div>

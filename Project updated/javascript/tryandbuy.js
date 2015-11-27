@@ -29,7 +29,7 @@ var s=0;
 var myArray;
 $("#tab td").each(function(){
 s=parseInt($(this).find('input[class=text_box]').val())*parseFloat($(this).find('span[class=price]').html());
-$(this).find(".total").html(s.toFixed(2));
+$(this).find(".total").html(s.toFixed(0));
 // var s = s.toFixed(2).replace(/[^0-9]/ig,"");
 total+=$(this).find(".total").text()*1;
 });
@@ -61,15 +61,18 @@ $(".smallImg").hover(function(){
   });
 });
 
-//for hover on MyBag
-$(document).ready(function(){
-  $('#show-quick-cart-zone').mouseenter(function () {
-      $('#show-quick-cart-details').slideDown(500);
-  });
-  $('#show-quick-cart-zone').mouseleave(function () {
-      $('#show-quick-cart-details').slideUp(500);
-  });
+
+var flag=0;
+$('#show-quick-cart-zone').mouseenter(function () {
+   document.getElementById("show-quick-cart-zone").style.zIndex = "1";
+    $('#quickcart').slideDown(500);
+    return false;
 });
+$('#account-cart-div').mouseleave(function () {
+    $('#quickcart').slideUp(500);
+    return false;
+});
+
 //enlarge end
 
 
@@ -78,5 +81,15 @@ $(document).ready(function(){
 $(function() {
     $('.chk_boxes').click(function() {
         $('.check').prop('checked', this.checked);
+    });
+});
+
+$(document).ready(function(event) {
+    $('form[name=tryandbuy]').submit(function(event){
+        var x =$(this).parent().find('input[class=text_box]');
+        if (x.val() == "0" ) {
+            alert("Select a number.");
+            event.preventDefault();
+        }
     });
 });
