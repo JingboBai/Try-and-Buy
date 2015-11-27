@@ -1,7 +1,11 @@
 /*
 start of index page
 */
-
+#forget-div{
+  background-color: red;
+  margin-top:200px;
+  margin-left: 300px;
+}
 .quickcart{
   width:200px;
   height:100px;
@@ -10,7 +14,6 @@ start of index page
   padding:8px 10px 10px;
   text-align:left;
   color:black;
-  background-color: yellow;
   text-align:center;
 }
 
@@ -18,29 +21,28 @@ start of index page
 float:right;
 width:200px;
 margin-right:20px;
-background-color: red;
 }
 #myaccount-zone{
-  background-color: blue;
 width:100px;
 }
 #show-quick-cart-zone{
 width:75px;
-background-color: green;
+
 }
 .hide{
-display:none
+  display:none;
 }
 .quickcarttitle{
-text-align:center;
-padding-top:15px;
-font-size:20px;
+  text-align:center;
+  padding-top:15px;
+  font-size:20px;
 }
 #show-quick-cart-deatils{
-z-index: 1;
-width:300px;
-height: 500px;
-  background-color: grey;
+  border:1px solid black;
+  z-index: 1;
+  position: relative;
+  width:300px;
+  height: 500px;
 }
  body{
         width:100%;
