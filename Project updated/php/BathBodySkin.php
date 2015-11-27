@@ -27,7 +27,7 @@ include "dbconnect.php";
 								?>
 								<div class=productDisplay>
 								<p id=addImage></p>
-                <form name="tryandbuy" id="addToBag" action="addToBag.php" method="post" >
+                <form name="tryandbuy" id="addToBag" action="addToBag2.php" method="post" >
 								   <a class=smallImg rel="<?=$results['src']?>">
 								  	<img class=productImage src="<?=$results['src']?>" alt=" ">
 								  </a>
