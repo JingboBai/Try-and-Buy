@@ -24,7 +24,7 @@ else {
       <a href="../php/MyAccount.php">My Account</a>
     </div> |
     <div id="show-quick-cart-zone">
-      <a href="../php/myBag.php">My Bag</a>
+      <a href="../php/addToBag2.php">My Bag</a>
     </div>
 
      <div id="show-quick-cart-details" class="hide">

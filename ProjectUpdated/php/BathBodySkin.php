@@ -1,6 +1,7 @@
 <?php
 include("../html/header.html");
 include "dbconnect.php";
+include("../html/nav.html");
 ?>
 	<div class="body-section">
     	  <div class="left-section">

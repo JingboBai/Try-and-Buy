@@ -1,5 +1,6 @@
 <?php
 include("../html/header.html");
+include("../html/nav.html");
 include "dbconnect.php";
 ?>
 

@@ -1,6 +1,7 @@
 <?php
 include("../html/header.html");
 include "dbconnect.php";
+include("../html/nav.html");
 ?>
 
 	<div class="body-section">
@@ -10,7 +11,7 @@ include "dbconnect.php";
             <tr><td><a href="#Deodorant">Deodorant</a></td></tr>
             <tr><td><a href="#Perfume">Perfume</a></td></tr>
             <tr><td><a href="#Mist">Mist</a></td></tr>
-          </table>
+           </table>
 
       </div>
       <div class="right-section">

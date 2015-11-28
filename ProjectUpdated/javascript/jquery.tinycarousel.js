@@ -88,7 +88,7 @@
          * @type Number
          * @default 0
          */
-        this.slidesTotal = 4;
+        this.slidesTotal = 5;
 
         /**
          * If the interval is running the value will be true.

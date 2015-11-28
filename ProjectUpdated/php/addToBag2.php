@@ -1,6 +1,7 @@
 <?php
 include("../html/header.html");
 include "dbconnect.php";
+include("../html/nav.html");
 ?>
 
 <div class="search-section">
@@ -34,9 +35,35 @@ include "dbconnect.php";
 
     if($quantity>= 1){
       if(($submitType=="Try")){
-          echo "<br>try </div>";
+
+          $count_result=mysqli_query($conn,"SELECT *
+                                      FROM UserInfo
+                                      WHERE email='$_SESSION[email]'") or die(mysqli_error());
+
+          // echo $count_result;
+          $count = mysqli_fetch_array($count_result);
+          $newCount=$count['RewardPoints']-$quantity;
+
+          if($newCount>=0)
+          {
+            echo "<br><p> The TRY sample is ongoing.</p>";
+            echo "<p> The current TRY count you left is " . $newCount . ".</p> </div>";
+            mysqli_query($conn, "UPDATE UserInfo
+            SET RewardPoints='$newCount'
+            WHERE email='$_SESSION[email]'")or die(mysql_error());
+          }
+          else{
+            echo "<br><p> Oops! You don't have enough TRY count.</p>";
+            echo "<p> The current TRY count you have is " . $count['RewardPoints']. ".</p> </div>";
+          }
           include("../html/pages-footer.html");
           exit();
+
+          // mysql_query($conn, "UPDATE UserInfo
+          // SET RewardPoints=''
+          // WHERE email='$username'")or die(mysql_error());
+
+
       }
       if(in_array($_POST["ProductId"],$_SESSION['ProductId'])){
        echo "It is already in your Bag";

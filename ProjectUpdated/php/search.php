@@ -2,6 +2,7 @@
 
 <?php
 include("../html/header.html");
+include("../html/nav.html");
 
     mysql_connect("localhost:8888", "root", "root") or die("Error connecting to database: ".mysql_error());
     mysql_select_db("try&buy_db") or die(mysql_error());
@@ -13,8 +14,8 @@ include("../html/header.html");
      <table class=categories>
       <tr><th>Select a Catagory </th><tr>
       <tr><td><a href="../php/BathBodySkin.php">BathBody &amp; Skin Care</td></tr>
-      <tr><td><a href="../php//fragrances.php">Fragrances</a></td></tr>
-      <tr><td><a href="../makeup.html">Makeup</td></tr>
+      <tr><td><a href="../php/fragrances.php">Fragrances</a></td></tr>
+      <tr><td><a href="../php/makeup.php">Makeup</td></tr>
      </table>
    </div>
 

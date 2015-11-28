@@ -12,6 +12,7 @@ if (isset($_POST['email']) && isset($_POST['password'])){
       //When login successful,start the Session
       session_start();
       $_SESSION["name"] = $name["FirstName"];
+      $_SESSION["email"] = $username;
       //echo("Checkpoint..2 var_dump($name[\"FirstName\"])");
       //print("Checkpoint..2 {$_SESSION['name']}");
       header("Location: ./index.php");

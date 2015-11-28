@@ -698,25 +698,24 @@ top: 33px;
 
 /*tiny caroural*/
 #slider1 {
-  /*position: absolute;*/
-  left:40px;
+  margin-left: 5%;
+  position: absolute;
   height: 300px;
-  /*width:400px;*/
+  width:1200px;
   padding: 0 0 10px 20px;
   margin-top: 50px;
 }
 #slider1 .viewport {
   float: left;
-  width: 800px;
-  height: 200px;
+  width: 1020px;
+  height: 125px;
   overflow: hidden;
-  position:relative;
-}
+  position:relative; }
 #slider1 .buttons {
     background: #C01313;
     border-radius: 35px;
     display: block;
-    margin: 50px 10px 0 0;
+    margin: 30px 10px 0 0;
     float: left;
     width: 35px;
     height: 35px;
@@ -729,7 +728,7 @@ top: 33px;
     font-size: 22px;
 }
 #slider1 .next {
-    margin: 50px 0 0 300px;
+    margin: 50px 0 0 50px;
 }
 #slider1 .buttons:hover {
     color: #C01313;
@@ -743,7 +742,7 @@ top: 33px;
    position: absolute;
    padding: 0;
     margin: 0;
-    width: 800px;
+    width: 900px;
     left: 0;
     top: 0;
   }
