@@ -3,9 +3,7 @@
 <?php
 include("../html/header.html");
 include("../html/nav.html");
-
-    mysql_connect("localhost:8888", "root", "root") or die("Error connecting to database: ".mysql_error());
-    mysql_select_db("try&buy_db") or die(mysql_error());
+include "dbconnect.php";s
 
 ?>
 

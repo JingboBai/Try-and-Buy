@@ -1,7 +1,9 @@
 <?php
 include("../html/header.html");
 include "dbconnect.php";
+include("../php/login-account-cart.php");
 include("../html/nav.html");
+session_start();
 ?>
 	<div class="body-section">
     	  <div class="left-section">

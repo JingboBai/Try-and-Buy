@@ -1,31 +1,35 @@
-<!doctype html>
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href ="../css/style.css" >
-</head>
-<body>
-  <div class="header-top">
-     <div class="header-top-left">
-      !! Find Best Choice For <span class="free" > FREE </span>
-     </div>
-     <div class="header-top-right">
-      News, offers & discounts
-     </div>
-  </div>
-  <div class="header">
-     <div class="logo">
-        <img class="logo-image" src="../images/indexpage/logo.jpg" alt="../images/indexpage/logo.jpg">
-    </div>
+<?php
+include("../html/header.html");
+session_start();
+?>
+
+
+
+
+
+
+<div class="search-section">
     <h1 class="checkout">Checkout</h1>
-  </div>
+
 <div class="card_image">
   <img src="../images/cc.png" alt="cc_image" id="cards">
 
 </div>
 <div class="form_division">
+
   <?php
   /* Variables are created to store values of the fields entered
   */
+ if(empty($_SESSION["email"])){
+   echo "<p>Please Login before checkout.</p>";
+   echo "<a href='register-login.php'><button class='mybag'>Login</button><a></div>
+   </div>";
+   include("../html/pages-footer.html");
+   echo "   </body></html>";
+   exit();
+ }
+
+
   $first_name = $last_name = $phone_number = $city= $state= $pincode= $country= $name_card= $card_number= $cvv= "";
 
   /* Variables are created to store values of errors
@@ -111,6 +115,25 @@ function test_input($datainput) {
    return $datainput;
 
 }
+
+ if($first_nameError == ""&&
+     $last_nameError == ""&&
+     $phone_numberError== ""&&
+     $cityError == ""&&
+     $stateError== ""&&
+     $pincodeError==""&&
+      $countryError==""&&
+      $name_cardError== ""&&
+      $card_numberError==""&&
+      $cvvError=="")
+  {
+   echo "<p>Your order has been processed.</p>";
+   echo "</div>
+   </div>";
+   include("../html/pages-footer.html");
+   echo "   </body></html>";
+   exit();
+ }
 ?>
 
 <form  action= "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  id="form1">
@@ -204,8 +227,11 @@ function test_input($datainput) {
 
 </form>
 </div>
+</div>
+<?php
 
+include("../html/index-footer.html");
 
-
+ ?>
 </body>
 </html>

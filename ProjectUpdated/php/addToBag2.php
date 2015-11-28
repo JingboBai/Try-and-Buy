@@ -72,7 +72,7 @@ include("../html/nav.html");
           array_push($_SESSION['quantity'],$quantity);
        }
     }
-
+     print_r($_SESSION['ProductId']);
     $num=count($_SESSION['ProductId']);
     if($num==0)
       {
@@ -103,7 +103,6 @@ include("../html/nav.html");
                  
 
                    $src=$row['src'];
-
 
                    ?>
                    <table id="tab">
@@ -141,8 +140,9 @@ include("../html/nav.html");
                  <input type="checkbox" class="chk_boxes" label="check all" />
                  <table>
                  <tr><td>Select All</td>
-                 <td><button class='mybag' onclick="submit" name="delete" value="1">Delete</button></td>
-                 <td><button class='mybag' onclick="submit" name="checkout">Checkout</button></td>
+                 <td><button class='mybag' name="delete" value="1">Delete</button></td>
+                 <td><a href="payment_new.php"><button type="button" class='mybag' name="checkout">Checkout</button></a></td>
+
                </table>
 
                  <?php  } ?>
