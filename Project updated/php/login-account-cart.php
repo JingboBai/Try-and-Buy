@@ -1,23 +1,35 @@
+<div class="login">
 <?php
 session_start();
 if (isset($_SESSION["name"]))
 {
 ?>
- <div class="login">
-   <a href="../php/register-login.php">Hi (<?= $_SESSION["name"] ?>)</a>
+   <span>Hi (<?= $_SESSION["name"] ?>)</span>
    <a href="../php/logout.php">Logout</a>
 <?php
- } else {
+}
+else {
 ?>
-  <a href="../php/register-login.php">Hi, SignIn <span id="register">Or Register</span></a>
-<?php
+    <a href="../php/register-login.php">SignIn Or Register</a>
+    <?php
 }
 ?>
-  </div>
+</div>
+<?php
+  if (isset($_SESSION["name"]))
+  {
+?>
   <div id="account-cart-div">
-    <div id="my-account-zone">  <a href="../php/index.php">Hi <?= $_SESSION["name"] ?>,Your Account</a> </div> |
-    <div id="show-quick-cart-zone">  <a href="../php/myBag.php">My Bag</a><div>
+    <div id="my-account-zone">
+      <a href="../php/index.php">My Account</a>
+    </div> |
+    <div id="show-quick-cart-zone">
+      <a href="../php/myBag.php">My Bag</a>
+    </div>
 
      <div id="show-quick-cart-details" class="hide">
      </div>
   </div>
+<?php
+}
+?>
