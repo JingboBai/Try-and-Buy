@@ -3,17 +3,15 @@ include("../html/header.html");
 include "dbconnect.php";
 ?>
 
-
 <div class="search-section">
   <h2 class=header2 >My Bag</h2>
-  <button><a href="javascript:history.go(-1);">Continue Shopping</a></button>
+  <a href="javascript:history.go(-1);"><button class='back'>Continue Shopping</button></a>
 
 <?php
     session_start();
     $quantity= $_POST["quantity"];
     $submitType= $_POST["submit"];
     $total=0;
-
 
     if(!isset($_SESSION['ProductId'])){
     $_SESSION['ProductId'] = array();
@@ -35,21 +33,39 @@ include "dbconnect.php";
     }
 
     if($quantity>= 1){
-    array_push($_SESSION['ProductId'],$_POST["ProductId"]);
-    array_push($_SESSION['quantity'],$quantity);
+      if(($submitType=="Try")){
+          echo "<br>try </div>";
+          include("../html/pages-footer.html");
+          exit();
+      }
+      if(in_array($_POST["ProductId"],$_SESSION['ProductId'])){
+       echo "It is already in your Bag";
+      }else{
+          array_push($_SESSION['ProductId'],$_POST["ProductId"]);
+          array_push($_SESSION['quantity'],$quantity);
+       }
     }
 
-    for($i=0;$i<sizeof($_SESSION['ProductId']);++$i){
+    $num=count($_SESSION['ProductId']);
+    if($num==0)
+      {
+        echo "<p>it is empty .</p> ";
+      }
+      else{
+
+    for($i=0;$i<count($_SESSION['ProductId']);++$i){
     $ProductId=$_SESSION['ProductId'][$i];
 
             $row_results = mysql_query("SELECT *
                                         FROM Products p
                                         WHERE ProductId='$ProductId'") or die(mysql_error());
-            ?>
 
+
+              ?>
 
                       <form  action="addToBag2.php" method="post">
                   <?php
+              if(mysql_num_rows($row_results) > 0) {
                   while($row = mysql_fetch_array($row_results))
                  {
                    $title=$row['ProductName'];
@@ -89,16 +105,23 @@ include "dbconnect.php";
                     }
                   }
 
-
+                }
 
                  ?>
 
                  <p>Total : $<span class=allTotal> <?=$total?></span></p>
                  <input type="checkbox" class="chk_boxes" label="check all" />
-                 Select All
-                 <button onclick="submit" name="delete" value="1">Delete</button>
-                 <button onclick="submit" name="checkout">Checkout</button>
+                 <table>
+                 <tr><td>Select All</td>
+                 <td><button class='mybag' onclick="submit" name="delete" value="1">Delete</button></td>
+                 <td><button class='mybag' onclick="submit" name="checkout">Checkout</button></td>
+               </table>
+
+                 <?php  } ?>
+
                   </form>
+
+
                  </div>
 
 

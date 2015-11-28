@@ -17,7 +17,6 @@ include "dbconnect.php";
 				<p id=addImage></p>
         <h2 class=header2 ><a name="Body Cleaners">Body Cleaners</a></h2>
 
-
        <?php
 			$row_results = mysql_query("SELECT * FROM products
 						WHERE `ProductType` ='Body Cleaner' ") or die(mysql_error());
@@ -81,7 +80,7 @@ include "dbconnect.php";
 								<input class="text_box" name="" type="text" value="0" size="8">
 								<input class="add" name="" type="button" value="+" >
 								<br>
-                <form id="addToBag" action="addToBag.php">
+                <form id="addToBag" action="addToBagw2.php">
                 <input class=trybuy type="image" src="../images/try.jpg" alt="Submit">
                 <input class=trybuy type="image" src="../images/buy.jpg" alt="Submit">
                 </form>
@@ -115,7 +114,7 @@ include "dbconnect.php";
 									</div>
 
 									<div class=quality>
-                      <form id="addToBag" action="addToBag.php" method="post">
+                      <form id="addToBag" action="addToBag2.php" method="post">
 											<input class="sub" name="" type="button" value="-" >
 											<input class="text_box" name="quantity" type="text" value="0" size="8">
 											<input class="add" name="" type="button" value="+" >
@@ -157,7 +156,7 @@ include "dbconnect.php";
 												<input class="text_box" name="" type="text" value="0" size="8">
 												<input class="add" name="" type="button" value="+" >
 												<br>
-                        <form id="addToBag" action="addToBag.php">
+                        <form id="addToBag" action="addToBag2.php">
                         <input class=trybuy type="image" src="../images/try.jpg" alt="Submit">
                         <input class=trybuy type="image" src="../images/buy.jpg" alt="Submit">
                         </form>
@@ -172,7 +171,6 @@ include "dbconnect.php";
 							</br>
 
     </div>
-
 	  </div>
 
 

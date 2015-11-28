@@ -799,3 +799,20 @@ top: 33px;
   color:black;
   clear: both;
 }
+
+/*mybag page*/
+.mybag {
+margin-left:30px;
+background: #b01ca1;
+font-family: Arial;
+color: #ffffff;
+font-size: 15px;
+padding: 10px 20px 10px 20px;
+}
+.back{
+  background: #b01ca1;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+}
