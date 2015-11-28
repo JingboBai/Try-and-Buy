@@ -18,6 +18,8 @@ include "dbconnect.php";
 
 
 
+
+
     if(!empty($_POST['check_list'])) {
         foreach($_POST['check_list'] as $check) {
                 if(($_POST['delete']==1))
