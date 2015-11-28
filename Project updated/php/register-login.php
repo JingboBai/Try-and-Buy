@@ -6,36 +6,24 @@ include("../html/nav.html");
 
 <div class="login-section">
   <div class="fbLogin">
-<span id="login-top"> Discovering beauty is even more exciting with friends!!    </span>
-<input type="image" id="connect-fb" src="../images/login-register/fb-connect.jpg" />
+    <span id="login-top"> Discovering beauty is even more exciting with friends!!    </span>
+    <input type="image" id="connect-fb" src="../images/login-register/fb-connect.jpg" />
   </div>
   <div class="login-body">
     <div id="userlogin">
       <p class="login-heading"> Customer Login </p>
-     <form method="post" action="login.php" name="login-form" onsubmit="return validateLoginForm()">
-       <span class="error" id= "emailErr"></span>
-       <span class="error" id= "passErr"></span>
+      <form method="post" action="./login.php" name="login-form" onsubmit="return validateLoginForm()">
+        <span class="error" id= "emailErr"></span>
+        <span class="error" id= "passErr"></span>
 
-<?php
-if (isset($_SESSION["flash"])){
-  ?>
-  <div class="error"> <?= $_SESSION["flash"] ?> </div>
-  <?php
-  unset($_SESSION["flash"]);
-}
- ?>
- <?php
- if (isset($_SESSION["username"])){
-   ?>
-   <div class="error"> Your Email is: <?= $_SESSION["username"] ?>  </div>
-   <div class="error"> Your Password is: <?= $_SESSION["passwo"] ?>  </div>
+        <?php
+        if (isset($_GET["error"])){
+        ?>
+          <div class="error"> <span>Incorrect Username or password</span> </div>
+        <?php
+        }
+        ?>
 
-   <?php
-   unset($_SESSION["username"]);
-   unset($_SESSION["passwo"]);
-
- }
-  ?>
       <input class="text" type="text" placeholder="Email Address" name="email" >
         <br>
         <input class="text" type="text" placeholder="Password" name="password">
