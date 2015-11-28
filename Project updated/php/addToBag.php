@@ -3,6 +3,11 @@ include("../html/header.html");
 include "dbconnect.php";
 ?>
 
+
+<div class="search-section">
+  <h2 class=header2 >My Bag</h2>
+  <button><a href="javascript:history.go(-1);">Continue Shopping</a></button>
+
 <?php
     session_start();
 
@@ -15,8 +20,6 @@ include "dbconnect.php";
 
     if(!empty($_POST['check_list'])) {
         foreach($_POST['check_list'] as $check) {
-
-               echo $check;
                 if(($_POST['delete']==1))
                 {
                   mysql_query("UPDATE Products
@@ -26,13 +29,20 @@ include "dbconnect.php";
         }
     }
 
-      // if($quantity>= 1){
-        // $_SESSION["quantity"] = "$quantity";
-        // $_SESSION["ProductName"] = "$ProductName";
         if($quantity>= 1){
-        mysql_query("UPDATE Products
-                                      SET ProductId='$ProductId', Quantity='$quantity'
-                                      WHERE ProductId='$ProductId'");
+          if(($submitType=="Try")){
+
+              echo "try </div>";
+
+              include("../html/pages-footer.html");
+              exit();
+          }
+          else{
+            mysql_query("UPDATE Products
+                                          SET ProductId='$ProductId', Quantity='$quantity'
+                                          WHERE ProductId='$ProductId'");
+          }
+
                           }
 
         $row_results = mysql_query("SELECT *
@@ -43,10 +53,12 @@ include "dbconnect.php";
 
 ?>
 
-    <div class="search-section">
-      <h2 class=header2 >My Bag</h2>
           <form  action="addToBag.php" method="post">
       <?php
+      if(mysql_num_rows($row_results) == 0)
+      {
+        echo "<p>it is empty .</p>";
+      }
       if(mysql_num_rows($row_results) > 0) {
                                 while($row = mysql_fetch_array($row_results)){
 
@@ -99,10 +111,8 @@ include "dbconnect.php";
 
 
        </form>
-       <?php
+     </div>
 
-       ?>
-    </div>
 
 
 

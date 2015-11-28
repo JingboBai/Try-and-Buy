@@ -2,6 +2,49 @@
 start of index page
 */
 
+<<<<<<< HEAD
+=======
+.quickcart{
+  width:200px;
+  height:100px;
+  z-index:50000;
+  border:1px solid #bebebe;
+  padding:8px 10px 10px;
+  text-align:left;
+  color:black;
+  background-color: yellow;
+  text-align:center;
+}
+
+#account-cart-div{
+float:right;
+width:200px;
+margin-right:20px;
+background-color: red;
+}
+#myaccount-zone{
+  background-color: blue;
+width:100px;
+}
+#show-quick-cart-zone{
+width:75px;
+background-color: green;
+}
+.hide{
+display:none
+}
+.quickcarttitle{
+text-align:center;
+padding-top:15px;
+font-size:20px;
+}
+#show-quick-cart-deatils{
+z-index: 1;
+width:300px;
+height: 500px;
+  background-color: grey;
+}
+>>>>>>> origin/master
  body{
         width:100%;
         height:100%;
@@ -721,7 +764,6 @@ top: 33px;
     width: 35px;
     height: 35px;
     position: relative;
-
     color: #fff;
     font-weight: bold;
     text-align: center;
@@ -737,8 +779,8 @@ top: 33px;
     background: #fff;
 }
 #slider1 .disable {
-  visibility:
-  hidden; }
+  visibility:hidden;
+  }
 #slider1 .overview {
    list-style: none;
    position: absolute;
@@ -746,18 +788,26 @@ top: 33px;
     margin: 0;
     width: 800px;
     left: 0;
-    top: 0; }
+    top: 0;
+  }
 #slider1 .overview li {
   float: left;
+<<<<<<< HEAD
   margin: 0 40px 0 0;
   padding: 1em;
   height: 150px;
   border: 1px
   solid #dcdcdc;
+=======
+  margin: 0 20px 0 0;
+  padding: 0px;
+  height: 121px;
+  border: 1px solid #dcdcdc;
+>>>>>>> origin/master
   width: 150px;
 }
 #slider1 .overview li img{
-  width: 150px;
+  width: 145px;
   height: 121px;
 }
 
