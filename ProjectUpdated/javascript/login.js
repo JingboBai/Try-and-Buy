@@ -35,3 +35,15 @@ function validateRegForm() {
       return false;
   }
 }
+
+function getMoreDetails() {
+    var email = document.forms["login-form"]["email"].value;
+  $.ajax({
+    url: './register-login.php?email=' + email,
+    type: 'GET',
+    success: function(result){
+      $("#forget-password-error").html(result);
+      $("#oforget-password-error").show();
+    },
+  });
+}

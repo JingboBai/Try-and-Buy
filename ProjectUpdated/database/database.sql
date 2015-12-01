@@ -48,9 +48,14 @@ INSERT INTO `CartInfo` (`BillId`, `ProductId`, `Count`) VALUES
 CREATE TABLE IF NOT EXISTS `CustomerShoppingInfo` (
   `BillId` int(11) DEFAULT NULL,
   `CustomerId` int(11) DEFAULT NULL,
-  `ProductId` varchar(100) DEFAULT NULL
+  `ProductId` varchar(100) DEFAULT NULL,
+  'Date' date
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO `CartInfo` (`BillId`, `ProductId`, `Count`) VALUES
+(1001, '001', 2);
+INSERT INTO `CartInfo` (`BillId`, `ProductId`, `Count`) VALUES
+(1002, '004', 5);
 -- --------------------------------------------------------
 
 --
@@ -165,7 +170,7 @@ ALTER TABLE `UserInfo`
   ADD PRIMARY KEY (`UserId`),
   ADD UNIQUE KEY `cardNumber` (`cardNumber`);
 
---
+
 -- AUTO_INCREMENT for dumped tables
 --
 

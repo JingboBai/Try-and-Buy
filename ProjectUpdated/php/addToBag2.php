@@ -73,6 +73,7 @@ include "dbconnect.php";
                    $count= $_SESSION['quantity'][$i];
 
                    $price=$row['Price'];
+                 
 
                    $src=$row['src'];
 

@@ -518,7 +518,9 @@ sub pages body section ends
 user login and registration part starts
 */
 .login-section{
-  background-image: url(../images/login-register/login-background-img.jpg);
+  background-image: url(../images/login-register/unnamed.png);
+  background-repeat: no-repeat;
+  background-position: right;
 }
 .login-body, .register-section, .information-section{
     height:500px;;
@@ -555,6 +557,8 @@ user login and registration part starts
   text-align: left;
   margin-left:40px;
   color:black;
+  line-height: 12px;
+  word-spacing: 4px;
 }
 .login-heading{
     font-size: 30px;
@@ -784,3 +788,51 @@ padding: 10px 20px 10px 20px;
   font-size: 15px;
   padding: 10px 20px 10px 20px;
 }
+/* My account css section start */
+.my-account-menu-bar, .my-account-body-section{
+  border: 1px solid black;
+  height: 500px;
+  margin-left: 50px;
+  padding-left: 20px;
+  width: 250px;
+  float:left;
+  margin-top: 70px;
+}
+.my-account-body-section{
+  width:700px;
+  margin-left: 30px;
+
+}
+.PasswordPage{
+  font-size: 25px;
+}
+#update-button{
+  width:150px;
+  height:50px;
+  text-align: center;
+}
+.myOrderTable{
+border:1px solid black;
+  }
+.table-headings{
+  border:1px solid black;
+  width:100px;
+  height:30px;
+}
+.show-Saved-Address, .addNewAddress{
+  border: 1px solid black;
+  width:200px;
+  height:200px;
+  float:left;
+}
+.addNewAddress{
+  width:450px;
+  margin-left:20px;
+  height:400px;
+}
+#order-more-details{
+  width:500px;
+  height:300px;
+  background-color: grey;
+}
+/* My account css section ends */

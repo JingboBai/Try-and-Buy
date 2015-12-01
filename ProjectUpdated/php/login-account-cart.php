@@ -21,7 +21,7 @@ else {
 ?>
   <div id="account-cart-div">
     <div id="my-account-zone">
-      <a href="../php/index.php">My Account</a>
+      <a href="../php/MyAccount.php">My Account</a>
     </div> |
     <div id="show-quick-cart-zone">
       <a href="../php/myBag.php">My Bag</a>
