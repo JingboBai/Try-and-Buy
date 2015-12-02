@@ -2,8 +2,11 @@
 
 <?php
 include("../html/header.html");
+include("../php/login-account-cart.php");
 include("../html/nav.html");
-include "dbconnect.php";s
+session_start();
+mysql_connect("localhost:8888", "root", "root") or die("Error connecting to database: ".mysql_error());
+mysql_select_db("try&buy_db") or die(mysql_error());
 
 ?>
 

@@ -14,18 +14,19 @@
 float:right;
 width:200px;
 margin-right:20px;
-background-color: red;
+/*background-color: red;*/
 }
 #myaccount-zone{
   background-color: blue;
 width:100px;
 }
 #show-quick-cart-zone{
-width:75px;
-background-color: green;
+width:100px;
+/*background-color: green;*/
+border-bottom: 2px solid brown;
 }
 .hide{
-display:none
+display:none;
 }
 .quickcarttitle{
 text-align:center;
@@ -44,7 +45,7 @@ height: 500px;
  }
 
 .login{
-      margin-left: 1100px;
+      right:50px;
       position:absolute;
       top:65px;
 }
@@ -76,12 +77,12 @@ height: 500px;
         margin-top:15px;
 }
 .header{
-    border-bottom:2px solid brown;
-    height:170px;
-    background-color:white;
-    color:black;
-    margin-top:20px;
-    width:800px;
+  border-bottom:2px solid brown;
+  height:170px;
+  background-color:white;
+  color:black;
+  margin-top:20px;
+  width:100%;
 }
 .logo{
         float:left;
@@ -148,7 +149,12 @@ height: 500px;
     width: 200px;
 }
 
-
+#my-account-zone{
+right:20px;
+position:absolute;
+top:165px;
+width:180px;
+}
 /*#account-cart-zone{
 float:right;
 width:50px;
@@ -379,24 +385,23 @@ img.gift{
 .left-section{
     margin-right: 500px;
     position:fixed;
-    top:28%;
+    top:27%;
     left:2%;
     height:500px;
     width:300px;
     margin-top:90px;
     margin-left:20px;
 }
-/*new updated*/
 .footer1{
   clear:both;
   width: 100%;
   border-top:2px solid red;
-  margin:15px 0px 0px 15px;
+  padding-left:13%;
   padding-top:15px;
   height:50px;
 }
 .copy-right2{
-	text-align:left;
+	text-align:center;
 	padding-top:30px;
 }
 /*
@@ -501,7 +506,17 @@ table.categories td{
   .trybuy:hover{
    opacity: 0.6;
   }
-  input[type=button]{
+  input[type=button].add{
+  width:25px;
+  height:25px;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 15px;
+  background: #b9bfc7;
+  text-decoration: none;
+  }
+  input[type=button].sub{
   width:25px;
   height:25px;
   border-radius: 5px;
@@ -541,7 +556,7 @@ user login and registration part starts
 .information-section{
   float:left;
   margin-right:50px;
-  background-color:grey;
+  background-color:white;
   margin-left:10px;
   color:black;
 
@@ -557,8 +572,6 @@ user login and registration part starts
   text-align: left;
   margin-left:40px;
   color:black;
-  line-height: 12px;
-  word-spacing: 4px;
 }
 .login-heading{
     font-size: 30px;
@@ -600,7 +613,7 @@ user login and registration part starts
   margin-left:200px;
   width:610px;
   height:70px;
-  background-color:grey;
+  background-color:white;
   font-size:19px;
   }
 #login-top{
@@ -787,6 +800,30 @@ padding: 10px 20px 10px 20px;
   font-size: 15px;
   padding: 10px 20px 10px 20px;
 }
+#tab{
+  padding-right:20px;
+}
+#tab img{
+  width:60px;
+  height:60px;
+}
+#tab td{
+  padding-right:20px;
+  width:200px;
+}
+.none{
+   visibility: hidden;
+}
+tr.bag td{
+  width:300px;
+  height:100px;
+  border-bottom: 1px dotted black;
+  border-collapse: collapse;
+}
+.cartTittle{
+  width:180px;
+}
+
 /* My account css section start */
 .my-account-menu-bar, .my-account-body-section{
   border: 1px solid black;
@@ -830,8 +867,28 @@ border:1px solid black;
   height:400px;
 }
 #order-more-details{
+  position: fixed;
+  left:700px;
+  top:250px;
   width:500px;
-  height:300px;
+  height:200px;
   background-color: grey;
 }
+.more-details-btn
+{
+  width:50px;
+  height:25px;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 15px;
+  background: #b9bfc7;
+  text-decoration: none;
+}
 /* My account css section ends */
+
+/*payment*/
+.card_image{
+  width: 200px;
+  height: 100px;
+}

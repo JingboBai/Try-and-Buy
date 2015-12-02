@@ -25,12 +25,13 @@ if (isset($_POST['oldPassword']) && isset($_POST['NewPassword'])){
 mysqli_close($conn);
 ?>
 <table class="my-account-menu-bar">
-<tr><th><a href="./myAccount.php">MY ACCOUNT</a></th><tr>
+<tr><th><a href="../php/myAccount.php">MY ACCOUNT</a></th><tr>
 <tr><td><a href="">Profile</a></td></tr>
-<tr><td><a href="./changePassword.php">change Password</a></td></tr>
-<tr><td><a href="">address book</a></td></tr>
-<tr><td><a href="">My Orders </a></td></tr>
+<tr><td><a href="../php/changePassword.php">change Password</a></td></tr>
+<tr><td><a href="../php/MyAccountAddress.php">address book</a></td></tr>
+<tr><td><a href="../php/MyOrders.php">My Orders </a></td></tr>
 </table>
+
 
 <div class="my-account-body-section">
   <form method="post" name="changePassword-form" onsubmit="return validateChangePassword()">

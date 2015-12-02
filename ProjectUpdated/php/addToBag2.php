@@ -1,7 +1,9 @@
 <?php
 include("../html/header.html");
-include "dbconnect.php";
+include ("dbconnect.php");
+include("../php/login-account-cart.php");
 include("../html/nav.html");
+session_start();
 ?>
 
 <div class="search-section">
@@ -9,10 +11,10 @@ include("../html/nav.html");
   <a href="javascript:history.go(-1);"><button class='back'>Continue Shopping</button></a>
 
 <?php
-    session_start();
     $quantity= $_POST["quantity"];
     $submitType= $_POST["submit"];
     $total=0;
+
 
     if(!isset($_SESSION['ProductId'])){
     $_SESSION['ProductId'] = array();
@@ -42,29 +44,22 @@ include("../html/nav.html");
 
           // echo $count_result;
           $count = mysqli_fetch_array($count_result);
-          $newCount=$count['RewardPoints']-$quantity;
-
-          if($newCount>=0)
+          $_SESSION['trycount']=$count['RewardPoints'];
+          if(($_SESSION['trycount']-$quantity)>=0)
           {
-            echo "<br><p> The TRY sample is ongoing.</p>";
-            echo "<p> The current TRY count you left is " . $newCount . ".</p> </div>";
-            mysqli_query($conn, "UPDATE UserInfo
-            SET RewardPoints='$newCount'
-            WHERE email='$_SESSION[email]'")or die(mysql_error());
+            array_push($_SESSION['ProductId'],$_POST["ProductId"]);
+            array_push($_SESSION['quantity'],'0');
+            echo "<p> The current TRY count you have is " . $count['RewardPoints'] . ".</p>";
+            $_SESSION['trycount']=$count['RewardPoints']-$quantity;
+
           }
           else{
             echo "<br><p> Oops! You don't have enough TRY count.</p>";
-            echo "<p> The current TRY count you have is " . $count['RewardPoints']. ".</p> </div>";
+            echo "<p> The current TRY count you left is " . $count['RewardPoints']. ".</p></div>";
           }
-          include("../html/pages-footer.html");
-          exit();
-
-          // mysql_query($conn, "UPDATE UserInfo
-          // SET RewardPoints=''
-          // WHERE email='$username'")or die(mysql_error());
-
 
       }
+
       if(in_array($_POST["ProductId"],$_SESSION['ProductId'])){
        echo "It is already in your Bag";
       }else{
@@ -72,7 +67,7 @@ include("../html/nav.html");
           array_push($_SESSION['quantity'],$quantity);
        }
     }
-     print_r($_SESSION['ProductId']);
+    //  print_r($_SESSION['ProductId']);
     $num=count($_SESSION['ProductId']);
     if($num==0)
       {
@@ -100,32 +95,44 @@ include("../html/nav.html");
                    $count= $_SESSION['quantity'][$i];
 
                    $price=$row['Price'];
-                 
 
                    $src=$row['src'];
 
                    ?>
                    <table id="tab">
-                      <tr>
+                      <tr class="bag">
                       <td><input class="check" type="checkbox" name='check_list[]' value="<?=$ProductId?>"> </td>
                       <td> <img class=productImage src="<?=$src?>" alt=" "></td>
+                      <td><p class="cartTittle"><?=$title?></p></td>
                       <td>
-                    <div class=discription>
-                      <p class=productName><?=$title?></p>
-                      <p>$<span class="price"><?=$price?></span></p>
-                    </div>
+
+                      <p class=none>$<span class="price"><?=$price?></span></p>
                    <div class=quality>
+                     <?php
+                     if($count=='0')
+                     {
+                       ?>
+                       <p> Type: </p>
+                       <input class="text_box" name="" type="text" value="<?=$count?>" size="8" hidden='hidden'>
+                       <p>Free Try!</p>
+                       <td> Price：$ <span class="total"> <?=($price * $count)?></span></td></tr>
+                       <br>
+                       <?php
+                     }
+                     else{
+
+                     ?>
+
                        <p> Quantity: </p>
                        <input class="sub" name="" type="button" value="-" >
                        <input class="text_box" name="" type="text" value="<?=$count?>" size="8">
                        <input class="add" name="" type="button" value="+" >
-                       <p> Price：$ <span class="total"> <?=($price * $count)?></span></p>
+                       <td> Price：$ <span class="total"> <?=($price * $count)?></span></td></tr>
                        <br>
+                       <?php } ?>
                    </div>
-                 </td>
-                  <td>
+                    </td>
 
-                  </td>
                   </table>
                  <?php
                     $total+=($price[$index] * $count[$index]);
@@ -137,11 +144,11 @@ include("../html/nav.html");
                  ?>
 
                  <p>Total : $<span class=allTotal> <?=$total?></span></p>
-                 <input type="checkbox" class="chk_boxes" label="check all" />
                  <table>
-                 <tr><td>Select All</td>
+                 <tr><td><input type="checkbox" class="chk_boxes" label="check all" /></td>
+                 <td>Select All</td>
                  <td><button class='mybag' name="delete" value="1">Delete</button></td>
-                 <td><a href="payment_new.php"><button type="button" class='mybag' name="checkout">Checkout</button></a></td>
+                 <td><a href="payment_new.php"><button type="button" class='mybag' name="checkout">Checkout</button></a></td></tr>
 
                </table>
 

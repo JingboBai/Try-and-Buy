@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.4.10
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Nov 25, 2015 at 09:00 PM
--- Server version: 5.6.26
--- PHP Version: 5.6.12
+-- Host: localhost:3306
+-- Generation Time: Dec 02, 2015 at 08:00 AM
+-- Server version: 5.5.42
+-- PHP Version: 5.6.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `CartInfo`
 --
 
-CREATE TABLE IF NOT EXISTS `CartInfo` (
+CREATE TABLE `CartInfo` (
   `BillId` int(11) DEFAULT NULL,
   `ProductId` varchar(100) NOT NULL DEFAULT '',
   `Count` int(11) DEFAULT NULL
@@ -45,24 +45,37 @@ INSERT INTO `CartInfo` (`BillId`, `ProductId`, `Count`) VALUES
 -- Table structure for table `CustomerShoppingInfo`
 --
 
-CREATE TABLE IF NOT EXISTS `CustomerShoppingInfo` (
-  `BillId` int(11) DEFAULT NULL,
+CREATE TABLE `CustomerShoppingInfo` (
+  `BillId` int(11) NOT NULL,
   `CustomerId` int(11) DEFAULT NULL,
   `ProductId` varchar(100) DEFAULT NULL,
-  'Date' date
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Quantity` int(100) DEFAULT '0',
+  `Date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `Total` float NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=latin1;
 
-INSERT INTO `CartInfo` (`BillId`, `ProductId`, `Count`) VALUES
-(1001, '001', 2);
-INSERT INTO `CartInfo` (`BillId`, `ProductId`, `Count`) VALUES
-(1002, '004', 5);
+--
+-- Dumping data for table `CustomerShoppingInfo`
+--
+
+INSERT INTO `CustomerShoppingInfo` (`BillId`, `CustomerId`, `ProductId`, `Quantity`, `Date`, `Total`) VALUES
+(100, 10, '002', 2, '2015-12-02 04:00:21', 8),
+(101, 10, '032', 2, '2015-12-02 04:00:21', 10),
+(102, 10, '002', 2, '2015-12-02 04:05:30', 8),
+(103, 10, '032', 2, '2015-12-02 04:05:30', 10),
+(104, 10, '001', 0, '2015-12-02 04:05:30', 0),
+(105, 10, '002', 2, '2015-12-02 04:05:59', 8),
+(106, 10, '032', 2, '2015-12-02 04:05:59', 10),
+(107, 10, '001', 0, '2015-12-02 04:05:59', 0),
+(108, 10, '001', 0, '2015-12-02 04:09:18', 0);
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `Products`
 --
 
-CREATE TABLE IF NOT EXISTS `Products` (
+CREATE TABLE `Products` (
   `ProductId` varchar(100) NOT NULL DEFAULT '',
   `ProductName` varchar(255) NOT NULL,
   `ProductType` varchar(100) DEFAULT NULL,
@@ -78,10 +91,10 @@ CREATE TABLE IF NOT EXISTS `Products` (
 --
 
 INSERT INTO `Products` (`ProductId`, `ProductName`, `ProductType`, `Price`, `Stock`, `ProductReview`, `src`, `Quantity`) VALUES
-('001', 'Moringa Soap', 'Body Cleaner', 5, 5, NULL, '../images/soapBars/soap1.jpg', 3),
-('002', 'Irish Spring', 'Body Cleaner', 4, 10, NULL, '../images/soapBars/soap2.jpg', NULL),
-('003', 'Pangea Organic Soap', 'Body Cleaner', 6, 10, NULL, '../images/soapBars/soap3.jpg', NULL),
-('004', 'Dead Sea Mineral Soap', 'Body Cleaner', 6, 10, NULL, '../images/soapBars/soap4.jpg', NULL),
+('001', 'Moringa Soap', 'Body Cleaner', 5, 5, NULL, '../images/soapBars/soap1.jpg', 0),
+('002', 'Irish Spring', 'Body Cleaner', 4, 10, NULL, '../images/soapBars/soap2.jpg', 0),
+('003', 'Pangea Organic Soap', 'Body Cleaner', 6, 10, NULL, '../images/soapBars/soap3.jpg', 0),
+('004', 'Dead Sea Mineral Soap', 'Body Cleaner', 6, 10, NULL, '../images/soapBars/soap4.jpg', 0),
 ('005', 'Rainforest Moisture', 'Hair Care', 12, 10, NULL, '../images/hair/hair1.jpg', NULL),
 ('006', 'Rainforest Balance Shampoo', 'Hair Care', 10, 10, NULL, '../images/hair/hair2.jpg', NULL),
 ('007', 'Wild Agran Oil', 'Hair Care', 25, 10, NULL, '../images/hair/hair3.jpg', NULL),
@@ -99,7 +112,19 @@ INSERT INTO `Products` (`ProductId`, `ProductName`, `ProductType`, `Price`, `Sto
 ('019', 'Juice Mist', 'Mist', 10, 10, NULL, '../images/mist/mist1.jpg', NULL),
 ('020', 'Rose Water Mist', 'Mist', 19, 10, NULL, '../images/mist/mist2.jpg', NULL),
 ('021', 'Organic Body Mist', 'Mist', 16, 10, NULL, '../images/mist/mist3.jpg', NULL),
-('022', 'Sea Mist', 'Mist', 12, 10, NULL, '../images/mist/mist5.jpg', NULL);
+('022', 'Sea Mist', 'Mist', 12, 10, NULL, '../images/mist/mist5.jpg', NULL),
+('023', 'Lip Balm', 'Lip', 8, 10, NULL, '../images/lipcare/lip1.jpg', NULL),
+('024', 'Lip Loks', 'Lip', 10, 10, NULL, '../images/lipcare/lip2.jpg', NULL),
+('025', 'Organic 4 Nature', 'Lip', 10, 10, NULL, '../images/lipcare/lip3.jpg', NULL),
+('026', 'Bio-LipPen', 'Lip', 12, NULL, NULL, '../images/lipcare/lip4.jpg', NULL),
+('027', 'Eye Serum', 'Eye Care', 15, NULL, NULL, '../images/eyecare/eye1.jpg', NULL),
+('028', 'Parsley Seed Serum', 'Eye Care', 12, NULL, NULL, '../images/eyecare/eye5.jpg', NULL),
+('029', 'SPA Fit Body Massager', 'SPA', 5, NULL, NULL, '../images/SPA/spa1.jpg', NULL),
+('030', 'Dead Sea Salt Scrub ', 'SPA', 32, NULL, NULL, '../images/SPA/spa2.jpg', NULL),
+('031', 'Nail Butter', 'Nail', 10, NULL, NULL, '../images/nail/nail1.jpg', NULL),
+('032', 'Nail Pen', 'Nail', 5, 0, NULL, '../images/nail/nail2.jpg', NULL),
+('033', 'LA Fresh', 'Remover', 10, NULL, NULL, '../images/makeup/access5.jpg', NULL),
+('034', 'Camomile Waterproof Eye Makeup Remover', 'Remover', 8, NULL, NULL, '../images/makeup/remover1.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -107,7 +132,7 @@ INSERT INTO `Products` (`ProductId`, `ProductName`, `ProductType`, `Price`, `Sto
 -- Table structure for table `TryCount`
 --
 
-CREATE TABLE IF NOT EXISTS `TryCount` (
+CREATE TABLE `TryCount` (
   `BillId` int(11) DEFAULT NULL,
   `ProductId` varchar(100) DEFAULT NULL,
   `Count` int(11) DEFAULT NULL
@@ -118,7 +143,6 @@ CREATE TABLE IF NOT EXISTS `TryCount` (
 --
 -- Table structure for table `UserInfo`
 --
-
 
 CREATE TABLE `UserInfo` (
   `UserId` int(255) NOT NULL,
@@ -138,14 +162,24 @@ CREATE TABLE `UserInfo` (
   `VisaCompanyName` varchar(255) DEFAULT NULL,
   `cardNumber` int(255) DEFAULT NULL,
   `TypeOfCard` char(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `UserInfo`
 --
 
 INSERT INTO `UserInfo` (`UserId`, `FirstName`, `LastName`, `email`, `password`, `RewardPoints`, `Street`, `City`, `State`, `Zip`, `Type`, `Flag`, `IssueDate`, `ExpiryDate`, `VisaCompanyName`, `cardNumber`, `TypeOfCard`) VALUES
-(1, 'Jingbo', 'Bai', 'jbai@scu.com', '123', 3, 'b', 'b', 'b', 'b', 13, 1, '2015-11-18', '2015-11-18', 'ggg', 13, 'tyy');
+(1, 'Jingbo', 'Bai', 'jbai@scu.com', '123', 0, 'b', 'b', 'b', 'b', 13, 1, '2015-11-18', '2015-11-18', 'ggg', 13, 'tyy'),
+(3, '', NULL, '', '', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'aas', NULL, 'aaa', 'aas', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'SSA', NULL, 'SSDS', 'sdas', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'prinal', NULL, 'P@sada', '123', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 'prinal', NULL, '123', '12331', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 'prinal', NULL, 'sdsa', '111', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, 'jingbo', NULL, 'jbai@scu.edu', '123', 9991, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, 'jbai', NULL, 'bill@scu.com', 'yaya9181', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(24, 'Jingbo', NULL, 'bill@scu.edu', '123', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, 'XX', NULL, 'xx@scu.com', '123', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -158,6 +192,12 @@ ALTER TABLE `CartInfo`
   ADD PRIMARY KEY (`ProductId`);
 
 --
+-- Indexes for table `CustomerShoppingInfo`
+--
+ALTER TABLE `CustomerShoppingInfo`
+  ADD UNIQUE KEY `BillId` (`BillId`);
+
+--
 -- Indexes for table `Products`
 --
 ALTER TABLE `Products`
@@ -168,17 +208,23 @@ ALTER TABLE `Products`
 --
 ALTER TABLE `UserInfo`
   ADD PRIMARY KEY (`UserId`),
+  ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `cardNumber` (`cardNumber`);
 
-
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `CustomerShoppingInfo`
+--
+ALTER TABLE `CustomerShoppingInfo`
+  MODIFY `BillId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=109;
+--
 -- AUTO_INCREMENT for table `UserInfo`
 --
 ALTER TABLE `UserInfo`
-  MODIFY `UserId` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `UserId` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

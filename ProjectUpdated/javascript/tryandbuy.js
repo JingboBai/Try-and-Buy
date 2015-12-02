@@ -27,7 +27,7 @@ function setTotal(){
 var total=0;
 var s=0;
 var myArray;
-$("#tab td").each(function(){
+$("#tab tr").each(function(){
 s=parseInt($(this).find('input[class=text_box]').val())*parseFloat($(this).find('span[class=price]').html());
 $(this).find(".total").html(s.toFixed(0));
 // var s = s.toFixed(2).replace(/[^0-9]/ig,"");
@@ -63,16 +63,18 @@ $(".smallImg").hover(function(){
 
 
 //for hover on MyBag
-$(document).ready(function(){
-  $('#show-quick-cart-zone').mouseenter(function () {
-      $('#show-quick-cart-details').slideDown(500);
-  });
-  $('#show-quick-cart-zone').mouseleave(function () {
-      $('#show-quick-cart-details').slideUp(500);
-  });
-});
+//$(document).ready(function(){
+  //$('#show-quick-cart-zone').mouseenter(function () {
+    //  $('#show-quick-cart-details').slideDown(500);
+  //});
+  //$('#show-quick-cart-zone').mouseleave(function () {
+    //  $('#show-quick-cart-details').slideUp(500);
+//  });
+//});
 
 //enlarge end
+
+
 
 
 

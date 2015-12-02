@@ -16,20 +16,12 @@ else {
 ?>
 </div>
 <?php
-  if (isset($_SESSION["name"]))
-  {
+
 ?>
-  <div id="account-cart-div">
     <div id="my-account-zone">
-      <a href="../php/MyAccount.php">My Account</a>
-    </div> |
-    <div id="show-quick-cart-zone">
-      <a href="../php/addToBag2.php">My Bag</a>
+      <a href="../php/MyAccount.php">My Account |</a><a href="../php/addToBag2.php">My Bag</a>
     </div>
 
-     <div id="show-quick-cart-details" class="hide">
-     </div>
-  </div>
 <?php
-}
+
 ?>

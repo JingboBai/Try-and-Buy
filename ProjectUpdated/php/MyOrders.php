@@ -6,7 +6,7 @@ if(isset($_GET["billId"])) {
   $billId = $_GET["billId"];
   error_log("Hello world");
 
-  $queryBillDetails="SELECT CustomerShoppingInfo.Date, CustomerShoppingInfo.ProductId, Products.ProductName, Products.Price, CustomerShoppingInfo.Count
+  $queryBillDetails="SELECT CustomerShoppingInfo.Date, CustomerShoppingInfo.ProductId, Products.ProductName, Products.Price, CustomerShoppingInfo.Quantity
   FROM CustomerShoppingInfo
   JOIN Products on CustomerShoppingInfo.ProductId = Products.ProductId
   JOIN UserInfo on CustomerShoppingInfo.CustomerId=UserInfo.UserId
@@ -30,7 +30,7 @@ if(isset($_GET["billId"])) {
               <td>{$details['Date']}</td>
               <td>{$details['ProductId']}</td>
               <td>{$details['ProductName']}</td>
-              <td>{$details['Count']}</td>
+              <td>{$details['Quantity']}</td>
               <td>{$details['Price']}</td>
             </tr>\n";
           }
@@ -75,7 +75,7 @@ else {
 
 
       <div id="order-more-details" class="hide">
-
+         <button class=hide>hide</button>
       </div>
   </div>
 <?php
